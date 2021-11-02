@@ -8,7 +8,7 @@ bool esEncuestaValida ( eph_h th, eph_i ti ) {
 	bool resp = false;
 	
 	// TODO
-	
+	// Comentario para git
 	return resp;
 }
 
