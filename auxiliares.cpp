@@ -7,9 +7,34 @@
 // Auxiliares Generales
 // Las funciones de acceso a las columnas todavia no estan definidas asi que todavia no funciona
 
+//ACCESO A LAS COLUMNAS
 int cantidadItemsIndividuo = 11;
 int cantidadItemsHogar = 12;
+int IndCodusu = INDCODUSU;
+int HogCodusu = HOGCODUSU;
+int IndAnio = INDANIO;
+int IndTrim = INDTRIMESTRE;
+int HogAno = HOGANIO;
+int HogTrim = HOGTRIMESTRE;
+int Componente = COMPONENTE;
+int Nivel_Ed = NIVEL_ED;
+int Estado = ESTADO;
+int Cat_Ocup = CAT_OCUP;
+int Edad = CH6;
+int Genero = CH4;
+int IngresoTot = p47T;
+int LugarTrabajo = PP04G;
+int Tenencia = II7;
+int Region = REGION;
+int _500k = MAS_500;
+int Tipo = IV1;
+int qHabitaciones = IV2;
+int qDormitorios = II2;
+int trabajaHogar = II3;
+int Latitud = HOGLATITUD;
+int Longitud = HOGLONGITUD;
 
+// Auxiliares ejercicio 1
 bool vacia ( vector<vector<dato>> s) {
     return s.size()==0;
 }
@@ -58,7 +83,7 @@ bool cantidadCorrectaDeColumnasH (eph_h th) {
 }
 
 bool esCasa(hogar h){
-    return h[@Tipo]==1
+    return h[@Tipo]==1;
 }
 
 bool esSuHogar(hogar h, individuo i){
