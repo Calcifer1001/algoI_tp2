@@ -28,6 +28,32 @@ int cantidadDeHabitantes(hogar h, eph_i ti){
     return res;
 }
 
+int ingresos(hogar h, eph_i ti){
+    int res = 0;
+    int tiSize = ti.size();
+
+    for(int i=0;i<tiSize-1;i++){
+        if(ti[i][@IndCodusu]==h[@HogCodusu] && ti[i][@IngresoTot]>1){
+            res += ti[i][@ingresoTot];
+        }
+    }
+
+    return res;
+}
+
+bool hogarEnTabla(hogar h, eph_h th){
+    bool res = false;
+    int thSize = th.size();
+
+    for(int i=0;i<thSize;i++){
+        if(th[i]==h){
+            res = true;
+        }
+    }
+
+    return res;
+}
+
 
 // Auxiliares del ejercicio 3
 // Las funciones de acceso a las columnas todavia no estan definidas asi que todavia no funciona
@@ -104,6 +130,11 @@ int cantHogaresEnAnillo(int distDesde, int distHasta, pair < int, int > centro, 
 
     return res;
 }
+
+
+
+
+
 
 
 
