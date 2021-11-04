@@ -32,8 +32,6 @@ vector< pair < int, float > > laCasaEstaQuedandoChica ( eph_h th, eph_i ti ) {
                                         make_pair(44,-1.0)};
 	// TODO
 
-
-
   return resp;
 }
 
@@ -97,6 +95,13 @@ vector < int > histogramaDeAnillosConcentricos( eph_h th, eph_i ti, pair < int, 
 	vector < int > resp = {};
 	
 	// TODO
+    int distanciasSize = distancias.size();
+
+    resp[0]=cantHogaresEnAnillo(0,distancias[0],centro);
+
+    for(int i=1;i<distanciasSize-1;i++){
+        resp[i]=cantHogaresEnAnillo(distancias[i],distancias[i+1],centro);
+    }
 	
 	return resp;
 }
@@ -108,6 +113,7 @@ pair < eph_h, eph_i > quitarIndividuos(eph_i & ti, eph_h & th, vector < pair < i
     pair < eph_h, eph_i > resp = make_pair(rth, rti);
 		
 	// TODO
+
 	
 	return resp;
 }

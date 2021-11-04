@@ -5,3 +5,6 @@
 
 
 #endif //SOLUCION_AUXILIARES_H
+
+
+int cantHogaresEnAnillo(int distDesde, int distHasta, pair < int, int > centro, eph_h th);

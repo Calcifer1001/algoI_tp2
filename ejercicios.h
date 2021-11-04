@@ -21,4 +21,6 @@ void corregirRegion( eph_h & th, eph_i ti );
 vector < int > histogramaDeAnillosConcentricos( eph_h th, eph_i ti, pair < int, int > centro, vector < int > distancias );
 pair < eph_h, eph_i > quitarIndividuos(eph_i & ti, eph_h & th, vector < pair < int, dato > >  busqueda );
 
+
+
 #endif //ETPH_EJERCICIOS_H
