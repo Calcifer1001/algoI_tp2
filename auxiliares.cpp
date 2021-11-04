@@ -5,6 +5,7 @@
 #include <math.h>
 
 // Auxiliares del ejercicio 11
+// Las funciones de acceso a las columnas todavia no estan definidas asi que todavia no funciona
 
 float distanciaEuclidiana(pair < int, int > centro, int latitud, int longitud){
     float res = sqrt(pow(centro.first-latitud, 2) + pow(centro.second-longitud, 2));
