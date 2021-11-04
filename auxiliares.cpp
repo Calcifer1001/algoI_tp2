@@ -7,6 +7,56 @@
 // Auxiliares Generales
 // Las funciones de acceso a las columnas todavia no estan definidas asi que todavia no funciona
 
+int cantidadItemsIndividuo = 11;
+int cantidadItemsHogar = 12;
+
+bool vacia ( vector<vector<dato>> s) {
+    return s.size()==0;
+}
+
+bool esMatriz( vector<vector<dato>> m) {
+    for(int i = 0; i<m.size(); i++) {
+        for(int j = i+1; j<m.size();  j++) {
+            if (m[i].size() != m[j].size()) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+bool individuoEnTabla (individuo ind, eph_i ti) {
+    for (int i = 0; i < ti.size(); i++) {
+        if (ti[i] == ind)
+            return true;
+    }
+    return false;
+}
+
+bool cantidadCorrectaDeColumnasI( eph_i ti) {
+    for (int i = 0; i<ti.size(); i++) {
+        if (ti[i].size() != cantidadItemsIndividuo)
+            return false;
+    }
+    return true;
+}
+
+bool hogarEnTabla ( hogar h, eph_h th ) {
+    for (int i = 0; i<th.size(); i++) {
+        if (th[i] == h)
+            return true;
+    }
+    return false;
+}
+
+bool cantidadCorrectaDeColumnasH (eph_h th) {
+    for (int i = 0; i<th.size(); i++) {
+        if ( th[i].size() != cantidadItemsHogar)
+            return false;
+    }
+    return true;
+}
+
 bool esCasa(hogar h){
     return h[@Tipo]==1
 }
