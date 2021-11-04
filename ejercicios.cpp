@@ -32,7 +32,14 @@ vector< pair < int, float > > laCasaEstaQuedandoChica ( eph_h th, eph_i ti ) {
                                         make_pair(44,-1.0)};
 	// TODO
 
-  return resp;
+    int respSize = resp.size();
+
+    for(int i=0;i<respSize;i++){
+        resp[i].second = proporcionDeCasasConHC(th,ti, resp[i].first);
+    }
+
+
+    return resp;
 }
 
 // Implementacion Problema 4
