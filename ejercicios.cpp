@@ -60,13 +60,15 @@ int costoSubsidioMejora( eph_h th, eph_i ti, int monto ){
 
 // Implementacion Problema 6
 join_hi generarJoin( eph_h th, eph_i ti ){
-    hogar h = {};
-    individuo i = {};
-	join_hi resp = {make_pair(h,i)};
-	
-	// TODO
-	
-  return  resp;
+    join_hi resp;
+    for (int i= 0; i<ti.size(); i++) {
+        for (int h =0; h<th.size(); h++) {
+            if (ti[i][IndCodusu]=th[h][HogCodusu]) {
+                resp.push_back(make_pair(th[h],ti[i]));
+            }
+        }
+    }
+    return  resp;
 }
 
 // Implementacion Problema 7
