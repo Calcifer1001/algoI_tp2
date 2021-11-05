@@ -5,7 +5,7 @@
 using namespace std;
 // Implementacion Problema 1
 bool esEncuestaValida ( eph_h th, eph_i ti ) {
-    if (esEncuestaValida(th, ti))
+    if (esValida(th, ti))
         return true;
     else
         return false;
