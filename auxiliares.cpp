@@ -6,6 +6,7 @@
 
 // Auxiliares ejercicio 1
 
+
 bool vacia ( vector<vector<dato>> s) {
     return s.size()==0;
 }
@@ -152,6 +153,7 @@ bool esCasa(hogar h){
     return h[Tipo]==1;
 }
 
+
 bool cantidadValidaDormitorios (eph_h th) {
     for (int h = 0; h<th.size(); h++) {
         if (th[h][qHabitaciones] < th[h][qDormitorios])
@@ -209,6 +211,9 @@ bool esValida(eph_h th, eph_i ti) {
         return false;
 }
 
+
+// Auxiliares Generales martin
+
 bool esCasa(hogar h){
     return h[ItemHogar::IV1]==1;
 }
@@ -217,20 +222,7 @@ bool esSuHogar(hogar h, individuo i){
     return h[ItemHogar::HOGCODUSU] == i[ItemInd::INDCODUSU];
 }
 
-int cantidadDeHabitantes(hogar h, eph_i ti){
-    int res = 0;
-    int tiSize = ti.size();
-
-    for(int i=0;i<tiSize;i++){
-        if(esSuHogar(h, ti[i])){
-            res++;
-        }
-    }
-
-    return res;
-}
-
-int ingresos(hogar h, eph_i ti){
+ int ingresos(hogar h, eph_i ti){
     int res = 0;
     int tiSize = ti.size();
 
@@ -256,6 +248,47 @@ bool hogarEnTabla(hogar h, eph_h th){
     return res;
 }
 
+
+int cantidadDeHabitantes(hogar h, eph_i ti){
+    int res = 0;
+    int tiSize = ti.size();
+
+    for(int i=0;i<tiSize;i++){
+        if(esSuHogar(h, ti[i])){
+            res++;
+        }
+    }
+
+    return res;
+}
+
+// Auxiliares ejercicio 2
+
+int cantHogaresConNHabitaciones(eph_h th, int region, int habitaciones){
+    int res=0;
+    int thSize=th.size();
+
+    for(int i=0;i<thSize;i++){
+        if(esCasa(th[i]) && th[i][ItemHogar::IV2]==habitaciones && th[i][ItemHogar::REGION] == region){
+            res++;
+        }
+    }
+
+    return res;
+}
+
+int maximaCantidadDeHabitacionesDeUnaCasaEnRegion(eph_h th, int region){
+    int thSize=th.size();
+    int res=0;
+
+    for(int i=0;i<thSize;i++){
+        if(esCasa(th[i]) && th[i][ItemHogar::REGION] == region && th[i][ItemHogar::IV2] > res){
+            res = th[i][ItemHogar::IV2];
+        }
+    }
+
+    return res;
+}
 
 // Auxiliares del ejercicio 3
 
@@ -330,6 +363,8 @@ int cantHogaresEnAnillo(int distDesde, int distHasta, pair < int, int > centro, 
 
     return res;
 }
+
+
 
 
 

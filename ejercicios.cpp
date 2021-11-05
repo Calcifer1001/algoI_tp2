@@ -5,10 +5,12 @@
 using namespace std;
 // Implementacion Problema 1
 bool esEncuestaValida ( eph_h th, eph_i ti ) {
+
     if (esValida(th, ti))
         return true;
     else
         return false;
+
 }
 
 // Implementacion Problema 2
@@ -16,7 +18,12 @@ vector < int > histHabitacional ( eph_h th, eph_i ti, int region ) {
 	vector < int > resultado = {-1, -1, -1, -1, -1, -1};
 	
 	// TODO
-	
+    resultado.clear();
+
+    for(int i=1;i<=maximaCantidadDeHabitacionesDeUnaCasaEnRegion(th, region);i++){
+        resultado.push_back(cantHogaresConNHabitaciones(th, region, i));
+    }
+
 	return resultado;
 }
 
@@ -60,15 +67,20 @@ int costoSubsidioMejora( eph_h th, eph_i ti, int monto ){
 
 // Implementacion Problema 6
 join_hi generarJoin( eph_h th, eph_i ti ){
+
     join_hi resp;
+
     for (int i= 0; i<ti.size(); i++) {
         for (int h =0; h<th.size(); h++) {
             if (ti[i][IndCodusu]=th[h][HogCodusu]) {
+           /* if (ti[i][ItemInd::INDCODUSU]=th[h][ItemHogar::HOGCODUSU]) {    lu fijate que la forma correcta de acceder a las columnas es asi, no hace falta definir otras funciones*/
                 resp.push_back(make_pair(th[h],ti[i]));
             }
         }
     }
+
     return  resp;
+
 }
 
 // Implementacion Problema 7
