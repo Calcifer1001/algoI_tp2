@@ -39,11 +39,9 @@ bool vacia ( vector<vector<dato>> s) {
 }
 
 bool esMatriz( vector<vector<dato>> m) {
-    for(int i = 0; i<m.size(); i++) {
-        for(int j = i+1; j<m.size();  j++) {
-            if (m[i].size() != m[j].size()) {
-                return false;
-            }
+    for(int j = 1; j<m.size();  j++) {
+        if (m[0].size() != m[j].size()) {
+            return false;
         }
     }
     return true;
@@ -239,9 +237,6 @@ bool esValida(eph_h th, eph_i ti) {
         return false;
 }
 
-
-
-//Ejercicios 3 y 11
 bool esCasa(hogar h){
     return h[ItemHogar::IV1]==1;
 }
@@ -333,7 +328,6 @@ float proporcionDeCasasConHC(eph_h th, eph_i ti, int region){
 
     return res;
 }
-
 
 // Auxiliares del ejercicio 11
 
