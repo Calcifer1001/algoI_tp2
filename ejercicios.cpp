@@ -5,11 +5,10 @@
 using namespace std;
 // Implementacion Problema 1
 bool esEncuestaValida ( eph_h th, eph_i ti ) {
-	bool resp = false;
-	
-	// TODO
-	// Comentario para git
-	return resp;
+    if (esEncuestaValida(th, ti))
+        return true;
+    else
+        return false;
 }
 
 // Implementacion Problema 2
