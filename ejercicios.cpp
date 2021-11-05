@@ -38,7 +38,6 @@ vector< pair < int, float > > laCasaEstaQuedandoChica ( eph_h th, eph_i ti ) {
         resp[i].second = proporcionDeCasasConHC(th,ti, resp[i].first);
     }
 
-
     return resp;
 }
 
@@ -104,10 +103,10 @@ vector < int > histogramaDeAnillosConcentricos( eph_h th, eph_i ti, pair < int, 
 	// TODO
     int distanciasSize = distancias.size();
 
-    resp[0]=cantHogaresEnAnillo(0,distancias[0],centro);
+    resp.push_back(cantHogaresEnAnillo(0,distancias[0],centro, th));
 
-    for(int i=1;i<distanciasSize-1;i++){
-        resp[i]=cantHogaresEnAnillo(distancias[i],distancias[i+1],centro);
+    for(int i=0;i<distanciasSize-1;i++){  // Consultar sobre la especificacion si i=0 o i=1
+        resp.push_back(cantHogaresEnAnillo(distancias[i],distancias[i+1],centro, th));
     }
 	
 	return resp;

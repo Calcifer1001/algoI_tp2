@@ -5,89 +5,13 @@
 #include <math.h>
 
 // Auxiliares Generales
-// Las funciones de acceso a las columnas todavia no estan definidas asi que todavia no funciona
-
-//ACCESO A LAS COLUMNAS
-int cantidadItemsIndividuo = 11;
-int cantidadItemsHogar = 12;
-int IndCodusu = INDCODUSU;
-int HogCodusu = HOGCODUSU;
-int IndAnio = INDANIO;
-int IndTrim = INDTRIMESTRE;
-int HogAno = HOGANIO;
-int HogTrim = HOGTRIMESTRE;
-int Componente = COMPONENTE;
-int Nivel_Ed = NIVEL_ED;
-int Estado = ESTADO;
-int Cat_Ocup = CAT_OCUP;
-int Edad = CH6;
-int Genero = CH4;
-int IngresoTot = p47T;
-int LugarTrabajo = PP04G;
-int Tenencia = II7;
-int Region = REGION;
-int _500k = MAS_500;
-int Tipo = IV1;
-int qHabitaciones = IV2;
-int qDormitorios = II2;
-int trabajaHogar = II3;
-int Latitud = HOGLATITUD;
-int Longitud = HOGLONGITUD;
-
-// Auxiliares ejercicio 1
-bool vacia ( vector<vector<dato>> s) {
-    return s.size()==0;
-}
-
-bool esMatriz( vector<vector<dato>> m) {
-    for(int i = 0; i<m.size(); i++) {
-        for(int j = i+1; j<m.size();  j++) {
-            if (m[i].size() != m[j].size()) {
-                return false;
-            }
-        }
-    }
-    return true;
-}
-
-bool individuoEnTabla (individuo ind, eph_i ti) {
-    for (int i = 0; i < ti.size(); i++) {
-        if (ti[i] == ind)
-            return true;
-    }
-    return false;
-}
-
-bool cantidadCorrectaDeColumnasI( eph_i ti) {
-    for (int i = 0; i<ti.size(); i++) {
-        if (ti[i].size() != cantidadItemsIndividuo)
-            return false;
-    }
-    return true;
-}
-
-bool hogarEnTabla ( hogar h, eph_h th ) {
-    for (int i = 0; i<th.size(); i++) {
-        if (th[i] == h)
-            return true;
-    }
-    return false;
-}
-
-bool cantidadCorrectaDeColumnasH (eph_h th) {
-    for (int i = 0; i<th.size(); i++) {
-        if ( th[i].size() != cantidadItemsHogar)
-            return false;
-    }
-    return true;
-}
 
 bool esCasa(hogar h){
-    return h[@Tipo]==1;
+    return h[ItemHogar::IV1]==1;
 }
 
 bool esSuHogar(hogar h, individuo i){
-    return h[@HogCodusu] == i[@IndCodusu];
+    return h[ItemHogar::HOGCODUSU] == i[ItemInd::INDCODUSU];
 }
 
 int cantidadDeHabitantes(hogar h, eph_i ti){
@@ -108,8 +32,8 @@ int ingresos(hogar h, eph_i ti){
     int tiSize = ti.size();
 
     for(int i=0;i<tiSize-1;i++){
-        if(ti[i][@IndCodusu]==h[@HogCodusu] && ti[i][@IngresoTot]>1){
-            res += ti[i][@ingresoTot];
+        if(ti[i][ItemInd::INDCODUSU]==h[ItemHogar::HOGCODUSU] && ti[i][ItemInd::p47T]>1){
+            res += ti[i][ItemInd::p47T];
         }
     }
 
@@ -131,22 +55,21 @@ bool hogarEnTabla(hogar h, eph_h th){
 
 
 // Auxiliares del ejercicio 3
-// Las funciones de acceso a las columnas todavia no estan definidas asi que todavia no funciona
 
 bool esHogarValido(hogar h, int region){
-    return esCasa(h) && h[@Region]==region && h[@+500k]==0;
+    return (esCasa(h) && h[ItemHogar::REGION]==region && h[ItemHogar::MAS_500]==0);
 }
 
 bool hogarConHacinamientoCritico(hogar h, eph_i ti){
-    return cantidadDeHabitantes(h, ti)>3*h[@qDormitorios];
+    return (cantidadDeHabitantes(h, ti)>3*h[ItemHogar::II2]);
 }
 
 int cantHogaresValidos(eph_h th, int region){
     int thSize=th.size();
     int res = 0;
 
-    for(int i=0;i<thSize-1;i++){
-        if(esHogarValido(th[i], region)==0){
+    for(int i=0;i<thSize;i++){
+        if(esHogarValido(th[i], region)){
             res++;
         }
     }
@@ -157,8 +80,8 @@ int cantHogaresValidosConHC(eph_h th, eph_i ti, int region){
     int thSize=th.size();
     int res = 0;
 
-    for(int i=0;i<thSize-1;i++){
-        if((esHogarValido(th[i], region)==0) && hogarConHacinamientoCritico(th[i], ti)){
+    for(int i=0;i<thSize;i++){
+        if(esHogarValido(th[i], region) && hogarConHacinamientoCritico(th[i], ti)){
             res++;
         }
     }
@@ -171,12 +94,12 @@ float proporcionDeCasasConHC(eph_h th, eph_i ti, int region){
     if(cantHogaresValidos(th, region)>0){
         res=cantHogaresValidosConHC(th, ti, region)/ cantHogaresValidos(th, region);
     }
+
     return res;
 }
 
 
 // Auxiliares del ejercicio 11
-// Las funciones de acceso a las columnas todavia no estan definidas asi que todavia no funciona
 
 float distanciaEuclidiana(pair < int, int > centro, int latitud, int longitud){
     float res = sqrt(pow(centro.first-latitud, 2) + pow(centro.second-longitud, 2));
@@ -186,14 +109,14 @@ float distanciaEuclidiana(pair < int, int > centro, int latitud, int longitud){
 bool hogarEnAnillo(int distDesde, int distHasta, pair < int, int > centro, hogar h){
     bool res = false;
 
-    if(distDesde < distanciaEuclidiana(centro, h[@HOGLATITUD], h[@HOGLONGITUD]) && distanciaEuclidiana(centro, h[@HOGLATITUD], h[@HOGLONGITUD]) <= distHasta){
+    if(distDesde < distanciaEuclidiana(centro, h[ItemHogar::HOGLATITUD], h[ItemHogar::HOGLONGITUD]) && distanciaEuclidiana(centro, h[ItemHogar::HOGLATITUD], h[ItemHogar::HOGLONGITUD]) <= distHasta){
         res = true;
     }
 
     return res;
 }
 
-int cantHogaresEnAnillo(int distDesde, int distHasta, pair < int, int > centro, eph_h th){ // consultar por el eph
+int cantHogaresEnAnillo(int distDesde, int distHasta, pair < int, int > centro, eph_h th){ // consultar por la especificacion si entra el eph como parametro
     int thSize = th.size();
     int res = 0;
 
@@ -205,8 +128,6 @@ int cantHogaresEnAnillo(int distDesde, int distHasta, pair < int, int > centro, 
 
     return res;
 }
-
-
 
 
 
