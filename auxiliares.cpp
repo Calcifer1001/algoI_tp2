@@ -6,9 +6,8 @@
 
 // Auxiliares ejercicio 1
 
-
 bool vacia ( vector<vector<dato>> s) {
-    return s.size()==0;
+return s.size()==0;
 }
 
 bool esMatriz( vector<vector<dato>> m) {
@@ -30,23 +29,15 @@ bool individuoEnTabla (individuo ind, eph_i ti) {
 
 bool cantidadCorrectaDeColumnasI( eph_i ti) {
     for (int i = 0; i<ti.size(); i++) {
-        if (ti[i].size() != cantidadItemsIndividuo)
+        if (ti[i].size() != 11)
             return false;
     }
     return true;
 }
 
-bool hogarEnTabla ( hogar h, eph_h th ) {
-    for (int i = 0; i<th.size(); i++) {
-        if (th[i] == h)
-            return true;
-    }
-    return false;
-}
-
 bool cantidadCorrectaDeColumnasH (eph_h th) {
     for (int i = 0; i<th.size(); i++) {
-        if ( th[i].size() != cantidadItemsHogar)
+        if ( th[i].size() != 12)
             return false;
     }
     return true;
@@ -54,7 +45,7 @@ bool cantidadCorrectaDeColumnasH (eph_h th) {
 
 bool hayHogarConCodigo (eph_h th, int c) {
     for (int h = 0; h < th.size(); h++) {
-        if ( th[h][HogCodusu] == c )
+        if ( th[h][ItemHogar::HOGCODUSU] == c )
             return true;
     }
     return false;
@@ -62,7 +53,7 @@ bool hayHogarConCodigo (eph_h th, int c) {
 
 bool hayIndividuosSinHogares (eph_i ti, eph_h th) {
     for (int i = 0; i<ti.size(); i++) {
-        if (not hayHogarConCodigo(th, ti[i][IndCodusu]))
+        if (not hayHogarConCodigo(th, ti[i][ItemInd::INDCODUSU]))
             return true;
     }
     return false;
@@ -70,7 +61,7 @@ bool hayIndividuosSinHogares (eph_i ti, eph_h th) {
 
 bool hayIndividuoConCodigo (eph_i ti, int c) {
     for (int i = 0; i<ti.size(); i++) {
-        if (ti[i][IndCodusu] == c)
+        if (ti[i][ItemInd::INDCODUSU] == c)
             return true;
     }
     return false;
@@ -78,14 +69,14 @@ bool hayIndividuoConCodigo (eph_i ti, int c) {
 
 bool hayHogaresSinIndividuos (eph_i ti, eph_h th) {
     for (int h = 0; h < th.size(); h++ ) {
-        if (not hayIndividuoConCodigo(ti, th[h][HogCodusu]))
+        if (not hayIndividuoConCodigo(ti, th[h][ItemHogar::HOGCODUSU]))
             return true;
     }
     return false;
 }
 
 bool mismoCodusuYComponente (individuo i1, individuo i2) {
-    return (i1[IndCodusu] == i2[IndCodusu]) && (i1[Componente] == i2[Componente]);
+    return (i1[ItemInd::INDCODUSU] == i2[ItemInd::INDCODUSU]) && (i1[ItemInd::COMPONENTE] == i2[ItemInd::COMPONENTE]);
 }
 
 bool hayRepetidosI (eph_i ti) {
@@ -101,7 +92,7 @@ bool hayRepetidosI (eph_i ti) {
 bool hayRepetidosH (eph_h th) {
     for (int n1 = 0; n1 < th.size(); n1++) {
         for (int n2 = 0; n2<th.size() && n2 != n1; n2++ ) {
-            if (th[n1][HogCodusu] == th[n2][HogCodusu])
+            if (th[n1][ItemHogar::HOGCODUSU] == th[n2][ItemHogar::HOGCODUSU])
                 return true;
         }
     }
@@ -118,18 +109,18 @@ int trimestre (eph_h th) {
 
 bool mismoAnioYTrimestre (eph_i ti, eph_h th) {
     for (int i = 0; i<ti.size(); i++) {
-        if ((ti[i][IndAnio] != anio(th)) || (ti[i][IndTrim] != trimestre(th)))
+        if ((ti[i][ItemInd::INDANIO] != anio(th)) || (ti[i][ItemInd::INDTRIMESTRE] != trimestre(th)))
             return false;
     }
     for (int h = 0; h < th.size(); h++) {
-        if ((th[h][HogAno] != anio(th)) || (th[h][HogTrim] != trimestre(th)))
+        if ((th[h][ItemHogar::HOGANIO] != anio(th)) || (th[h][ItemHogar::HOGTRIMESTRE] != trimestre(th)))
             return false;
     }
     return true;
 }
 
 bool esSuHogar(hogar h, individuo i){
-    return h[HogCodusu] == i[IndCodusu];
+    return h[ItemHogar::HOGCODUSU] == i[ItemInd::INDCODUSU];
 }
 
 int cantHabitantes (hogar h, eph_i ti) {
@@ -149,24 +140,19 @@ bool menosDe21MiembrosPorHogar (eph_h th, eph_i ti) {
     return true;
 }
 
-bool esCasa(hogar h){
-    return h[Tipo]==1;
-}
-
-
 bool cantidadValidaDormitorios (eph_h th) {
     for (int h = 0; h<th.size(); h++) {
-        if (th[h][qHabitaciones] < th[h][qDormitorios])
+        if (th[h][ItemHogar::IV2] < th[h][ItemHogar::II2])
             return false;
     }
     return true;
 }
 
 bool individuoValido (individuo i) {
-    if (i[IndCodusu]>0 && i[Componente]>0 && i[IndTrim]>0 && i[IndTrim]<=4 && i[Genero]>0 &&
-        i[Genero]<=4 &&i[Edad]>=0 && i[Edad]>=0 && (i[Nivel_Ed]==0 || i[Nivel_Ed]==1) &&
-        i[Estado]>=-1 && i[Estado]<=1 && i[Cat_Ocup]>=0 && i[Cat_Ocup]<=4 && (i[IngresoTot]>=0 ||
-                                                                              i[IngresoTot]==-1) && i[LugarTrabajo]>=0 && i[LugarTrabajo]<=10 )
+    if (i[ItemInd::INDCODUSU]>0 && i[ItemInd::COMPONENTE]>0 && i[ItemInd::INDTRIMESTRE]>0 && i[ItemInd::INDTRIMESTRE]<=4 && i[ItemInd::CH4]>0 &&
+        i[ItemInd::CH4]<=4 &&i[ItemInd::CH6]>=0 && i[ItemInd::CH6]>=0 && (i[ItemInd::NIVEL_ED]==0 || i[ItemInd::NIVEL_ED]==1) &&
+        i[ItemInd::ESTADO]>=-1 && i[ItemInd::ESTADO]<=1 && i[ItemInd::CAT_OCUP]>=0 && i[ItemInd::CAT_OCUP]<=4 && (i[ItemInd::p47T]>=0 || i[ItemInd::p47T]==-1)
+        && i[ItemInd::PP04G]>=0 && i[ItemInd::PP04G]<=10 )
         return true;
     else
         return false;
@@ -185,9 +171,9 @@ bool valorRegionValido(int r) {
 }
 
 bool hogarValido(hogar h) {
-    if (h[HogCodusu]>0 && h[HogTrim]>0 && h[HogTrim]<=4 && h[Tenencia]>0 && h[Tenencia]<=3 &&
-        valorRegionValido(h[Region]) && (h[_500k]==0 || h[_500k]==1) && h[Tipo]>0 && h[Tipo]<=5 &&
-        h[qHabitaciones]>0 && h[qDormitorios]>=1 && (h[trabajaHogar]==1 || h[trabajaHogar]==2))
+    if (h[ItemHogar::HOGCODUSU]>0 && h[ItemHogar::HOGTRIMESTRE]>0 && h[ItemHogar::HOGTRIMESTRE]<=4 && h[ItemHogar::II7]>0 && h[ItemHogar::II7]<=3 &&
+        valorRegionValido(h[ItemHogar::REGION]) && (h[ItemHogar::MAS_500]==0 || h[ItemHogar::MAS_500]==1) && h[ItemHogar::IV1]>0 && h[ItemHogar::IV1]<=5 &&
+        h[ItemHogar::IV2]>0 && h[ItemHogar::II2]>=1 && (h[ItemHogar::II3]==1 || h[ItemHogar::II3]==2))
         return true;
     else
         return false;
@@ -216,10 +202,6 @@ bool esValida(eph_h th, eph_i ti) {
 
 bool esCasa(hogar h){
     return h[ItemHogar::IV1]==1;
-}
-
-bool esSuHogar(hogar h, individuo i){
-    return h[ItemHogar::HOGCODUSU] == i[ItemInd::INDCODUSU];
 }
 
  int ingresos(hogar h, eph_i ti){

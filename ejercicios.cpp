@@ -72,7 +72,7 @@ join_hi generarJoin( eph_h th, eph_i ti ){
 
     for (int i= 0; i<ti.size(); i++) {
         for (int h =0; h<th.size(); h++) {
-            if (ti[i][IndCodusu]=th[h][HogCodusu]) {
+            if (ti[i][ItemInd::INDCODUSU]=th[h][ItemHogar::HOGCODUSU]) {
            /* if (ti[i][ItemInd::INDCODUSU]=th[h][ItemHogar::HOGCODUSU]) {    lu fijate que la forma correcta de acceder a las columnas es asi, no hace falta definir otras funciones*/
                 resp.push_back(make_pair(th[h],ti[i]));
             }
