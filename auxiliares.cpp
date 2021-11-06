@@ -316,6 +316,60 @@ float proporcionDeCasasConHC(eph_h th, eph_i ti, int region){
     return res;
 }
 
+//Auxiliares del ejercicio 7
+
+void swap(vector<vector<dato>> &s, dato a, dato b){
+    vector<dato> c = s[a];
+    s[a]= s[b];
+    s[b] = c;
+}
+
+void insertH(eph_h &th, dato i) {
+    for(int j=i; j>0 ; j--) {
+        if (th[j][ItemHogar::REGION] < th[j-1][ItemHogar::REGION]) //distinta REGION
+            swap(th, j, j-1);
+        if ((th[j][ItemHogar::REGION] == th[j-1][ItemHogar::REGION]) && th[j][ItemHogar::HOGCODUSU] < th[j-1][ItemHogar::HOGCODUSU]) //misma REGION, ordenar por HOGCODUSU
+            swap(th, j, j-1);
+    }
+}
+
+void ordenarTablaHogares(eph_h &th) {
+    for(int i=0; i<th.size(); i++) {
+        insertH(th,i);
+    }
+}
+
+bool vivenJuntos (individuo i1, individuo i2) {
+    return (i1[ItemInd::INDCODUSU] == i2[ItemInd::INDCODUSU]);
+}
+
+bool suhogarEstaAntes (eph_h th, individuo i1, individuo i2) {
+    int a; int b;
+    for (int i =0; i < th.size(); i++) {
+        if (th[i][ItemHogar::HOGCODUSU]== i1[ItemInd::INDCODUSU])
+            a = i;
+        if (th[i][ItemHogar::HOGCODUSU]== i2[ItemInd::INDCODUSU])
+            b = i;
+    }
+    return a<b;
+}
+
+void insertI(eph_i &ti, eph_h th, dato i) {
+    for(int j=i; j>0 ; j--) {
+        if (suhogarEstaAntes(th, ti[j], ti[j-1])) {
+            swap(ti, j, j-1);
+        }
+        if (vivenJuntos(ti[j], ti[j-1]) && ti[j][ItemInd::COMPONENTE] < ti[j-1][ItemInd::COMPONENTE])
+            swap(ti, j, j-1);
+    }
+}
+
+void ordenarTablaIndividuos(eph_i &ti, eph_h th) {
+    for(int i=0; i<ti.size(); i++) {
+        insertI(ti,th, i);
+    }
+}
+
 // Auxiliares del ejercicio 11
 
 float distanciaEuclidiana(pair < int, int > centro, int latitud, int longitud){
@@ -345,8 +399,6 @@ int cantHogaresEnAnillo(int distDesde, int distHasta, pair < int, int > centro, 
 
     return res;
 }
-
-
 
 
 

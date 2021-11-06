@@ -67,13 +67,10 @@ int costoSubsidioMejora( eph_h th, eph_i ti, int monto ){
 
 // Implementacion Problema 6
 join_hi generarJoin( eph_h th, eph_i ti ){
-
     join_hi resp;
-
     for (int i= 0; i<ti.size(); i++) {
         for (int h =0; h<th.size(); h++) {
-            if (ti[i][ItemInd::INDCODUSU]=th[h][ItemHogar::HOGCODUSU]) {
-           /* if (ti[i][ItemInd::INDCODUSU]=th[h][ItemHogar::HOGCODUSU]) {    lu fijate que la forma correcta de acceder a las columnas es asi, no hace falta definir otras funciones*/
+            if (ti[i][ItemInd::INDCODUSU]==th[h][ItemHogar::HOGCODUSU]) {
                 resp.push_back(make_pair(th[h],ti[i]));
             }
         }
@@ -85,10 +82,8 @@ join_hi generarJoin( eph_h th, eph_i ti ){
 
 // Implementacion Problema 7
 void ordenarRegionYCODUSU (eph_h & th, eph_i & ti) {
-	
-	// TODO
-	
-	return;
+    ordenarTablaHogares(th);
+    ordenarTablaIndividuos(ti, th);
 }
 
 // Implementacion Problema 8
