@@ -13,3 +13,6 @@ int maximaCantidadDeHabitacionesDeUnaCasaEnRegion(eph_h th, int region);
 int cantHogaresConNHabitaciones(eph_h th, int region, int habitaciones);
 void ordenarTablaHogares(eph_h &th);
 void ordenarTablaIndividuos(eph_i &ti, eph_h th);
+int ingresos(hogar h, eph_i ti);
+int diferenciaDeIngresos(eph_i ti, hogar hog1, hogar hog2);
+void buscarSiguienteHogar(eph_h th, eph_i ti, int dif, vector<hogar>& temp, int nEsimoHogar, vector<int> hogaresAnteriores, int maximoActual);

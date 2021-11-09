@@ -284,33 +284,23 @@ cxxabi.h
 acxx_demangle.h
 -
 
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/Funciones_TPI.h
-iostream
--
-vector
--
-fstream
--
+/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/auxiliares.cpp
 definiciones.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/definiciones.h
-
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/auxiliares.cpp
-definiciones.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/definiciones.h
+/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/definiciones.h
 auxiliares.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/auxiliares.h
+/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/auxiliares.h
 gtest/gtest.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/gtest/gtest.h
+/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/gtest/gtest.h
 ejercicios.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/ejercicios.h
+/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/ejercicios.h
 math.h
 -
 
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/auxiliares.h
+/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/auxiliares.h
 definiciones.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/definiciones.h
+/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/definiciones.h
 
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/definiciones.h
+/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/definiciones.h
 iostream
 -
 vector
@@ -318,15 +308,7 @@ vector
 tuple
 -
 
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/ejercicios.cpp
-ejercicios.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/ejercicios.h
-auxiliares.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/auxiliares.h
-definiciones.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/definiciones.h
-
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/ejercicios.h
+/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/ejercicios.h
 iostream
 -
 vector
@@ -336,133 +318,5 @@ math.h
 tuple
 -
 definiciones.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/definiciones.h
-
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/test/corregirRegionTEST.cpp
-../definiciones.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/definiciones.h
-../Funciones_TPI.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/Funciones_TPI.h
-../ejercicios.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/ejercicios.h
-gtest/gtest.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/test/gtest/gtest.h
-iostream
--
-string
--
-../auxiliares.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/auxiliares.h
-
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/test/costoSubsidioMejoraTEST.cpp
-../definiciones.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/definiciones.h
-../Funciones_TPI.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/Funciones_TPI.h
-../ejercicios.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/ejercicios.h
-../auxiliares.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/auxiliares.h
-gtest/gtest.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/test/gtest/gtest.h
-iostream
--
-string
--
-
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/test/esEncuestaValidaTEST.cpp
-../definiciones.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/definiciones.h
-../Funciones_TPI.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/Funciones_TPI.h
-../ejercicios.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/ejercicios.h
-gtest/gtest.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/test/gtest/gtest.h
-iostream
--
-string
--
-../auxiliares.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/auxiliares.h
-
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/test/generarJoinTEST.cpp
-../definiciones.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/definiciones.h
-../Funciones_TPI.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/Funciones_TPI.h
-../ejercicios.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/ejercicios.h
-../auxiliares.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/auxiliares.h
-gtest/gtest.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/test/gtest/gtest.h
-iostream
--
-string
--
-
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/test/histogramaDeAnillosConcentricosTEST.cpp
-../definiciones.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/definiciones.h
-../Funciones_TPI.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/Funciones_TPI.h
-../ejercicios.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/ejercicios.h
-../auxiliares.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/auxiliares.h
-gtest/gtest.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/test/gtest/gtest.h
-iostream
--
-string
--
-
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/test/muestraHomogeneaTEST.cpp
-../definiciones.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/definiciones.h
-../Funciones_TPI.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/Funciones_TPI.h
-../ejercicios.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/ejercicios.h
-../auxiliares.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/auxiliares.h
-gtest/gtest.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/test/gtest/gtest.h
-iostream
--
-string
--
-
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/test/ordenarRegionYCODUSUTEST.cpp
-../definiciones.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/definiciones.h
-../Funciones_TPI.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/Funciones_TPI.h
-../ejercicios.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/ejercicios.h
-gtest/gtest.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/test/gtest/gtest.h
-iostream
--
-string
--
-../auxiliares.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/auxiliares.h
-
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/test/quitarIndividuosTEST.cpp
-../definiciones.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/definiciones.h
-../Funciones_TPI.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/Funciones_TPI.h
-../ejercicios.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/ejercicios.h
-../auxiliares.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/auxiliares.h
-gtest/gtest.h
-C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/test/gtest/gtest.h
-iostream
--
-string
--
+/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/definiciones.h
 

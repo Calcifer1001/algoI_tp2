@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/lib/googletest-master
+# Install script for directory: /Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/lib/googletest-master
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/tpi")
+  set(CMAKE_INSTALL_PREFIX "/usr/local")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,12 +34,12 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/objdump")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/Ryzen 3/Documents/Martin/Algoritmos/TPI/algoI_tp2/cmake-build-debug/lib/googletest-master/googlemock/cmake_install.cmake")
+  include("/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/cmake-build-debug/lib/googletest-master/googlemock/cmake_install.cmake")
 
 endif()
 

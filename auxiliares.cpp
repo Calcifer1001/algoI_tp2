@@ -204,18 +204,7 @@ bool esCasa(hogar h){
     return h[ItemHogar::IV1]==1;
 }
 
- int ingresos(hogar h, eph_i ti){
-    int res = 0;
-    int tiSize = ti.size();
 
-    for(int i=0;i<tiSize-1;i++){
-        if(ti[i][ItemInd::INDCODUSU]==h[ItemHogar::HOGCODUSU] && ti[i][ItemInd::p47T]>1){
-            res += ti[i][ItemInd::p47T];
-        }
-    }
-
-    return res;
-}
 
 bool hogarEnTabla(hogar h, eph_h th){
     bool res = false;
@@ -238,6 +227,19 @@ int cantidadDeHabitantes(hogar h, eph_i ti){
     for(int i=0;i<tiSize;i++){
         if(esSuHogar(h, ti[i])){
             res++;
+        }
+    }
+
+    return res;
+}
+
+int ingresos(hogar h, eph_i ti){
+    int res = 0;
+    int tiSize = ti.size();
+
+    for(int i=0;i<tiSize;i++){
+        if(ti[i][ItemInd::INDCODUSU]==h[ItemHogar::HOGCODUSU] && ti[i][ItemInd::p47T]>-1){
+            res += ti[i][ItemInd::p47T];
         }
     }
 
@@ -370,6 +372,35 @@ void ordenarTablaIndividuos(eph_i &ti, eph_h th) {
     }
 }
 
+//Auxiliares del ejercicio 8
+
+bool estaContenido(int actual, vector<int> anteriores){
+    bool res=false;
+
+    for(int i=0;i<anteriores.size();i++){
+        if(anteriores[i]==actual){
+            res=true;
+        }
+    }
+
+    return res;
+}
+
+int diferenciaDeIngresos(eph_i ti, hogar hog1, hogar hog2){
+    return ingresos(hog2,ti)-ingresos(hog1,ti);
+}
+
+void buscarSiguienteHogar(eph_h th, eph_i ti, int dif, vector<hogar>& temp, int nEsimoHogar, vector<int> hogaresAnteriores, int maximoActual){
+    for(int k=0;k<th.size();k++){
+        if(nEsimoHogar != k && diferenciaDeIngresos(ti, th[nEsimoHogar], th[k])>0 && diferenciaDeIngresos(ti, th[nEsimoHogar], th[k]) == dif && !estaContenido(th[k][ItemHogar::HOGCODUSU], hogaresAnteriores) && ingresos(th[k], ti)>maximoActual){
+            temp.push_back(th[k]);
+            hogaresAnteriores.push_back(th[k][ItemHogar::HOGCODUSU]);
+            maximoActual = ingresos(th[k], ti);
+            buscarSiguienteHogar(th, ti, dif, temp, k, hogaresAnteriores, maximoActual);
+        }
+    }
+}
+
 // Auxiliares del ejercicio 11
 
 float distanciaEuclidiana(pair < int, int > centro, int latitud, int longitud){
@@ -399,6 +430,10 @@ int cantHogaresEnAnillo(int distDesde, int distHasta, pair < int, int > centro, 
 
     return res;
 }
+
+
+
+
 
 
 
