@@ -525,6 +525,16 @@ void cambiaRegionesGBAaPampeana(eph_h &th) {
     }
 }
 
+// Auxiliares ejercicio 10
+bool cumpleCondicion(vector < pair < int, dato >> busqueda, individuo ind) {
+    for(int i = 0; i < busqueda.size(); i++) {
+        tuple<int, dato> condicion = busqueda[i];
+        if(!ind[get<0>(condicion)] == get<1>(condicion)) {
+            return false;
+        }
+    }
+    return true;
+}
 // Auxiliares del ejercicio 11
 
 float distanciaEuclidiana(pair < int, int > centro, int latitud, int longitud){
