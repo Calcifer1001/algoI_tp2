@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /home/silkking/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/212.5457.51/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /home/silkking/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/212.5457.51/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2
+CMAKE_SOURCE_DIR = /home/silkking/Workspace/Facultad/algoI_tp2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/cmake-build-debug
+CMAKE_BINARY_DIR = /home/silkking/Workspace/Facultad/algoI_tp2/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/depend.make
@@ -68,16 +68,16 @@ include lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/flags.make
 
 lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o: lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/flags.make
 lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o: ../lib/googletest-master/googlemock/src/gmock_main.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
-	cd /Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/cmake-build-debug/lib/googletest-master/googlemock && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/lib/googletest-master/googlemock/src/gmock_main.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/silkking/Workspace/Facultad/algoI_tp2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
+	cd /home/silkking/Workspace/Facultad/algoI_tp2/cmake-build-debug/lib/googletest-master/googlemock && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /home/silkking/Workspace/Facultad/algoI_tp2/lib/googletest-master/googlemock/src/gmock_main.cc
 
 lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gmock_main.dir/src/gmock_main.cc.i"
-	cd /Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/cmake-build-debug/lib/googletest-master/googlemock && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/lib/googletest-master/googlemock/src/gmock_main.cc > CMakeFiles/gmock_main.dir/src/gmock_main.cc.i
+	cd /home/silkking/Workspace/Facultad/algoI_tp2/cmake-build-debug/lib/googletest-master/googlemock && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/silkking/Workspace/Facultad/algoI_tp2/lib/googletest-master/googlemock/src/gmock_main.cc > CMakeFiles/gmock_main.dir/src/gmock_main.cc.i
 
 lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gmock_main.dir/src/gmock_main.cc.s"
-	cd /Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/cmake-build-debug/lib/googletest-master/googlemock && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/lib/googletest-master/googlemock/src/gmock_main.cc -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.s
+	cd /home/silkking/Workspace/Facultad/algoI_tp2/cmake-build-debug/lib/googletest-master/googlemock && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/silkking/Workspace/Facultad/algoI_tp2/lib/googletest-master/googlemock/src/gmock_main.cc -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.s
 
 # Object files for target gmock_main
 gmock_main_OBJECTS = \
@@ -89,19 +89,19 @@ gmock_main_EXTERNAL_OBJECTS =
 lib/googletest-master/googlemock/libgmock_maind.a: lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
 lib/googletest-master/googlemock/libgmock_maind.a: lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/build.make
 lib/googletest-master/googlemock/libgmock_maind.a: lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libgmock_maind.a"
-	cd /Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/cmake-build-debug/lib/googletest-master/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock_main.dir/cmake_clean_target.cmake
-	cd /Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/cmake-build-debug/lib/googletest-master/googlemock && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gmock_main.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/silkking/Workspace/Facultad/algoI_tp2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libgmock_maind.a"
+	cd /home/silkking/Workspace/Facultad/algoI_tp2/cmake-build-debug/lib/googletest-master/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock_main.dir/cmake_clean_target.cmake
+	cd /home/silkking/Workspace/Facultad/algoI_tp2/cmake-build-debug/lib/googletest-master/googlemock && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gmock_main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/build: lib/googletest-master/googlemock/libgmock_maind.a
 .PHONY : lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/build
 
 lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/clean:
-	cd /Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/cmake-build-debug/lib/googletest-master/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock_main.dir/cmake_clean.cmake
+	cd /home/silkking/Workspace/Facultad/algoI_tp2/cmake-build-debug/lib/googletest-master/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock_main.dir/cmake_clean.cmake
 .PHONY : lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/clean
 
 lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/depend:
-	cd /Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2 /Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/lib/googletest-master/googlemock /Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/cmake-build-debug /Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/cmake-build-debug/lib/googletest-master/googlemock /Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/cmake-build-debug/lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/silkking/Workspace/Facultad/algoI_tp2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/silkking/Workspace/Facultad/algoI_tp2 /home/silkking/Workspace/Facultad/algoI_tp2/lib/googletest-master/googlemock /home/silkking/Workspace/Facultad/algoI_tp2/cmake-build-debug /home/silkking/Workspace/Facultad/algoI_tp2/cmake-build-debug/lib/googletest-master/googlemock /home/silkking/Workspace/Facultad/algoI_tp2/cmake-build-debug/lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/depend
 

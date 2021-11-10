@@ -6,7 +6,21 @@
 
 // Auxiliares ejercicio 1
 
-bool vacia ( vector<vector<dato>> s) {
+int cantIndividuosQueTrabajan(eph_h vector1, eph_i vector2);
+
+bool trabaja(individuo vector1);
+
+bool individuoEnHogarValido(individuo vector1, eph_h vector2);
+
+bool realizaSusTareasEnEsteHogar(individuo vector1);
+
+bool suHogarTieneEspaciosReservadorParaElTrabajo(individuo vector1, eph_h vector2);
+
+bool esDeCiudadGrande(individuo vector1, eph_h vector2);
+
+bool suHogarEsCasaODepartamento(individuo vector1, eph_h vector2);
+
+bool vacia (vector<vector<dato>> s) {
 return s.size()==0;
 }
 
@@ -99,12 +113,12 @@ bool hayRepetidosH (eph_h th) {
     return false;
 }
 
-int anio(eph_h th) {
-    return th[0][1];
+int anio(eph_i ti) {
+    return ti[0][ItemInd::INDANIO];
 }
 
-int trimestre (eph_h th) {
-    return th[0][2];
+int trimestre(eph_i ti) {
+    return ti[0][ItemInd::INDTRIMESTRE];
 }
 
 bool mismoAnioYTrimestre (eph_i ti, eph_h th) {
@@ -401,12 +415,20 @@ void buscarSiguienteHogar(eph_h th, eph_i ti, int dif, vector<hogar>& temp, int 
     }
 }
 // Auxiliares del ejercicio 4
-float proporcionTeleworking(eph_h th, eph_i ti) {
-    if(cantIndividuosQueTrabajan(th, ti) > 0) {
-        return (float) cantIndividuosTrabajandoEnSuVivienda(th, ti) / (float) cantIndividuosQueTrabajan(th, ti);
-    } else {
-        return 0;
-    }
+bool esCasaODepartamento(hogar h) {
+    return h[ItemHogar::IV1] == 1 || h[ItemHogar::IV1] == 2;
+}
+
+bool realizaSusTareasEnEsteHogar(individuo i) {
+    return i[ItemInd::PP04G] == 6;
+}
+
+bool tieneEspaciosReservadosParaElTrabajo(hogar h) {
+    return h[ItemHogar::II3] == 1;
+}
+
+bool trabajaEnSuVivienda(individuo i, eph_h th) {
+    return realizaSusTareasEnEsteHogar(i) && suHogarTieneEspaciosReservadorParaElTrabajo(i, th);
 }
 
 int cantIndividuosTrabajandoEnSuVivienda(eph_h th, eph_i ti) {
@@ -420,6 +442,15 @@ int cantIndividuosTrabajandoEnSuVivienda(eph_h th, eph_i ti) {
     return sum;
 }
 
+float proporcionTeleworking(eph_h th, eph_i ti) {
+    if(cantIndividuosQueTrabajan(th, ti) > 0) {
+        return (float) cantIndividuosTrabajandoEnSuVivienda(th, ti) / (float) cantIndividuosQueTrabajan(th, ti);
+    } else {
+        return 0;
+    }
+}
+
+
 int cantIndividuosQueTrabajan(eph_h th, eph_i ti) {
     int sum = 0;
     for(int indice = 0; indice < ti.capacity(); indice++) {
@@ -431,9 +462,7 @@ int cantIndividuosQueTrabajan(eph_h th, eph_i ti) {
     return sum;
 }
 
-bool trabajaEnSuVivienda(individuo i, eph_h th) {
-    return realizaSusTareasEnEsteHogar(i) && suHogarTieneEspaciosReservadorParaElTrabajo(i, th);
-}
+
 
 bool individuoEnHogarValido(individuo i, eph_h th) {
     return esDeCiudadGrande(i, th) && suHogarEsCasaODepartamento(i, th);
@@ -441,14 +470,6 @@ bool individuoEnHogarValido(individuo i, eph_h th) {
 
 bool trabaja(individuo i) {
     return i[ItemInd::ESTADO] == 1;
-}
-
-int anio(eph_i ti) {
-    return ti[0][ItemInd::INDANIO];
-}
-
-int trimestre(eph_i ti) {
-    return ti[0][ItemInd::INDTRIMESTRE];
 }
 
 bool esDeCiudadGrande(individuo i, eph_h th) {
@@ -478,30 +499,9 @@ bool suHogarEsCasaODepartamento(individuo i, eph_h th) {
     return false;
 }
 
-bool esCasaODepartamento(hogar h) {
-    return h[ItemHogar::IV1] == 1 || h[ItemHogar::IV1] == 2;
-}
 
-bool realizaSusTareasEnEsteHogar(individuo i) {
-    return i[ItemInd::PP04G] == 6;
-}
-
-bool tieneEspaciosReservadosParaElTrabajo(hogar h) {
-    return h[ItemHogar::II3] == 1;
-}
 
 // Auxiliares del ejercicio 9 
-
-void cambiaRegionesGBAaPampeana(eph_h th, eph_h th0) {
-    for(int indice = 0; indice < th.capacity(); indice++) {
-        hogar h = th[indice];
-        hogar h0 = th0[indice];
-        if(h0[ItemHogar::REGION] == 1) {
-            cambiaRegionGBAaPampeana(h, h0);
-        }
-    }
-}
-
 
 void cambiaRegionGBAaPampeana(hogar &original, hogar nuevo) {
     original[ItemHogar::HOGCODUSU] = nuevo[ItemHogar::HOGCODUSU];
@@ -514,6 +514,18 @@ void cambiaRegionGBAaPampeana(hogar &original, hogar nuevo) {
     // original[ItemHogar::II2] = nuevo[ItemHogar::II2];
     // original[ItemHogar::II3] = nuevo[ItemHogar::II3];
 }
+
+void cambiaRegionesGBAaPampeana(eph_h th, eph_h th0) {
+    for(int indice = 0; indice < th.capacity(); indice++) {
+        hogar h = th[indice];
+        hogar h0 = th0[indice];
+        if(h0[ItemHogar::REGION] == 1) {
+            cambiaRegionGBAaPampeana(h, h0);
+        }
+    }
+}
+
+
 // Auxiliares del ejercicio 11
 
 float distanciaEuclidiana(pair < int, int > centro, int latitud, int longitud){

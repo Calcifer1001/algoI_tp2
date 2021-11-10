@@ -284,23 +284,23 @@ cxxabi.h
 acxx_demangle.h
 -
 
-/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/auxiliares.cpp
+/home/silkking/Workspace/Facultad/algoI_tp2/auxiliares.cpp
 definiciones.h
-/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/definiciones.h
+/home/silkking/Workspace/Facultad/algoI_tp2/definiciones.h
 auxiliares.h
-/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/auxiliares.h
+/home/silkking/Workspace/Facultad/algoI_tp2/auxiliares.h
 gtest/gtest.h
-/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/gtest/gtest.h
+/home/silkking/Workspace/Facultad/algoI_tp2/gtest/gtest.h
 ejercicios.h
-/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/ejercicios.h
+/home/silkking/Workspace/Facultad/algoI_tp2/ejercicios.h
 math.h
 -
 
-/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/auxiliares.h
+/home/silkking/Workspace/Facultad/algoI_tp2/auxiliares.h
 definiciones.h
-/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/definiciones.h
+/home/silkking/Workspace/Facultad/algoI_tp2/definiciones.h
 
-/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/definiciones.h
+/home/silkking/Workspace/Facultad/algoI_tp2/definiciones.h
 iostream
 -
 vector
@@ -308,7 +308,7 @@ vector
 tuple
 -
 
-/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/ejercicios.h
+/home/silkking/Workspace/Facultad/algoI_tp2/ejercicios.h
 iostream
 -
 vector
@@ -318,5 +318,5 @@ math.h
 tuple
 -
 definiciones.h
-/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/definiciones.h
+/home/silkking/Workspace/Facultad/algoI_tp2/definiciones.h
 
