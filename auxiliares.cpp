@@ -332,6 +332,15 @@ float proporcionDeCasasConHC(eph_h th, eph_i ti, int region){
     return res;
 }
 
+// Auxiliares ejercicio 5
+bool tieneCasaPropia(hogar h) {
+    return h[ItemHogar::II7] == 1;
+}
+
+bool tieneCasaChica(hogar h, eph_i ti) {
+    return cantHabitantes(h, ti) - 2 > h[ItemHogar::II2];
+}
+
 //Auxiliares del ejercicio 7
 
 void swap(vector<vector<dato>> &s, dato a, dato b){
@@ -503,27 +512,62 @@ bool suHogarEsCasaODepartamento(individuo i, eph_h th) {
 
 // Auxiliares del ejercicio 9 
 
-void cambiaRegionGBAaPampeana(hogar &original, hogar nuevo) {
-    original[ItemHogar::HOGCODUSU] = nuevo[ItemHogar::HOGCODUSU];
-    // original[ItemHogar::HOGANIO] = nuevo[ItemHogar::HOGANIO];
-    // original[ItemHogar::HOGTRIMESTRE] = nuevo[ItemHogar::HOGTRIMESTRE];
-    // original[ItemHogar::II7] = nuevo[ItemHogar::II7];
-    // original[ItemHogar::REGION] = nuevo[ItemHogar::REGION];
-    // original[ItemHogar::IV1] = nuevo[ItemHogar::IV1];
-    // original[ItemHogar::IV2] = nuevo[ItemHogar::IV2];
-    // original[ItemHogar::II2] = nuevo[ItemHogar::II2];
-    // original[ItemHogar::II3] = nuevo[ItemHogar::II3];
+void cambiaRegionGBAaPampeana(hogar &original) {
+    original[ItemHogar::HOGCODUSU] = PAMPEANA;
 }
 
-void cambiaRegionesGBAaPampeana(eph_h th, eph_h th0) {
+void cambiaRegionesGBAaPampeana(eph_h &th) {
     for(int indice = 0; indice < th.capacity(); indice++) {
         hogar h = th[indice];
-        hogar h0 = th0[indice];
-        if(h0[ItemHogar::REGION] == 1) {
-            cambiaRegionGBAaPampeana(h, h0);
+        if(h[ItemHogar::REGION] == GBA) {
+            cambiaRegionGBAaPampeana(h);
         }
     }
 }
+
+// Auxiliares ejercicio 10
+bool cumpleCondicion(vector < pair < int, dato >> busqueda, individuo ind) {
+    for(int i = 0; i < busqueda.size(); i++) {
+        tuple<int, dato> condicion = busqueda[i];
+        if(!ind[get<0>(condicion)] == get<1>(condicion)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool quedanIndividuosEnEncuesta(vector<pair<ItemInd, dato>> busqueda, eph_i ti) {
+    for(int i = 0; i < ti.size(); i++) {
+        if(!cumpleCondicion(busqueda, ti[i])) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool quedanIndividuosEnResultado(vector<pair<ItemInd, dato>> busqueda, eph_i ti) {
+    for(int i = 0; i < ti.size(); i++) {
+        if(cumpleCondicion(busqueda, ti[i])) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool encuestaVacia(eph_h th, eph_i ti) {
+    return th.size() == 0 && ti.size() == 0;
+}
+
+bool hayIndividuoQueNoCumpleCondicionEnHogar(hogar h, vector<pair<ItemInd, dato>> busqueda, eph_i ti) {
+    for(int i = 0; i < ti.size(); i++) {
+        individuo ind = ti[i];
+        if(!cumpleCondicion(busqueda, ind) && ind[ItemInd::INDCODUSU] == h[ItemHogar::HOGCODUSU]) {
+            return true;
+        }
+    }
+}
+
+
 
 
 // Auxiliares del ejercicio 11

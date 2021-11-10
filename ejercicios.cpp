@@ -5,7 +5,7 @@
 using namespace std;
 // Implementacion Problema 1
 bool esEncuestaValida ( eph_h th, eph_i ti ) {
-
+    // return esValida(th, ti);
     if (esValida(th, ti))
         return true;
     else
@@ -54,11 +54,15 @@ bool creceElTeleworkingEnCiudadesGrandes ( eph_h t1h, eph_i t1i, eph_h t2h, eph_
 
 // Implementacion Problema 5
 int costoSubsidioMejora( eph_h th, eph_i ti, int monto ){
-	int resp = -1;
-	
-	// TODO
-	
-  return  resp;
+    int resp = 0;
+    for(int i = 0; i < th.size(); i++) {
+        hogar h = th[i];
+        if(tieneCasaPropia(h) && tieneCasaChica(h, ti)) {
+            resp += monto;
+        }
+    }
+
+    return  resp;
 }
 
 // Implementacion Problema 6
@@ -129,13 +133,12 @@ vector < hogar > muestraHomogenea( eph_h & th, eph_i & ti ){
 
 // Implementacion Problema 9
 void corregirRegion( eph_h & th, eph_i ti ) {
-	
-	// TODO
+    cambiaRegionesGBAaPampeana(th);
 	
 	return;
 }
 
-// Implementacion Problema 10
+// Implementacion Problema 11
 vector < int > histogramaDeAnillosConcentricos( eph_h th, eph_i ti, pair < int, int > centro, vector < int > distancias ){
 	vector < int > resp = {};
 	
@@ -151,13 +154,50 @@ vector < int > histogramaDeAnillosConcentricos( eph_h th, eph_i ti, pair < int, 
 	return resp;
 }
 
-// Implementacion Problema 11
+// Implementacion Problema 10
 pair < eph_h, eph_i > quitarIndividuos(eph_i & ti, eph_h & th, vector < pair < int, dato > >  busqueda ){
     eph_h rth = {{-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1}};
     eph_i rti = {{-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1}};
     pair < eph_h, eph_i > resp = make_pair(rth, rti);
-		
+    for (int i = 0; i < ti.size(); ++i) {
+        individuo ind = ti[i];
+        if(cumpleCondicion(busqueda, ind)) {
+            resp.second.push_back(ind);
+        }
+    }
+    vector<bool> hogarSigueTeniendoIndividuoEnEncuesta;
+    for (int i = 0; i < resp.second.size(); ++i) {
+        individuo individuoAEliminar = resp.second[i];
+        eph_i::iterator it = ti.begin();
+        bool individuoDistintoEnMismoHogar = false;
+        while (it != ti.end()) {
+            individuo individuoAComparar = *it;
+            if(individuoAEliminar == individuoAComparar) {
+                it = ti.erase(it);
+            } else {
+                ++it;
+                individuoDistintoEnMismoHogar |= individuoAComparar[ItemInd::INDCODUSU] == individuoAEliminar[ItemInd::INDCODUSU];
+            }
+        }
+        hogarSigueTeniendoIndividuoEnEncuesta.push_back(individuoDistintoEnMismoHogar);
+    }
+    for(int i = 0; i < resp.second.size(); i++) {
+        if(!hogarSigueTeniendoIndividuoEnEncuesta[i]) {
+            individuo ind = resp.second[i];
+            eph_h::iterator hogarIterator = th.begin();
+            while(hogarIterator != th.end()) {
+                hogar h = *hogarIterator;
+                if(h[ItemHogar::HOGCODUSU] == ind[ItemInd::INDCODUSU]) {
+                    resp.first.push_back(h);
+                    hogarIterator = th.erase(hogarIterator);
+                    --hogarIterator;
+                }
+                ++hogarIterator;
+            }
+        }
+    }
 	// TODO
+
 
 	
 	return resp;
