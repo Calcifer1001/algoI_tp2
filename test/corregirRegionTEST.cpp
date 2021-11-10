@@ -43,3 +43,6 @@ TEST(corregirRegionTEST, cuatroHogares) {
     corregirRegion(th, ti);
     EXPECT_EQ( th, esperado );
 }
+
+
+

@@ -53,7 +53,7 @@ bool hayHogarConCodigo (eph_h th, int c) {
 
 bool hayIndividuosSinHogares (eph_i ti, eph_h th) {
     for (int i = 0; i<ti.size(); i++) {
-        if (not hayHogarConCodigo(th, ti[i][ItemInd::INDCODUSU]))
+        if (!hayHogarConCodigo(th, ti[i][ItemInd::INDCODUSU]))
             return true;
     }
     return false;
@@ -69,7 +69,7 @@ bool hayIndividuoConCodigo (eph_i ti, int c) {
 
 bool hayHogaresSinIndividuos (eph_i ti, eph_h th) {
     for (int h = 0; h < th.size(); h++ ) {
-        if (not hayIndividuoConCodigo(ti, th[h][ItemHogar::HOGCODUSU]))
+        if (!hayIndividuoConCodigo(ti, th[h][ItemHogar::HOGCODUSU]))
             return true;
     }
     return false;
@@ -160,7 +160,7 @@ bool individuoValido (individuo i) {
 
 bool valoresEnRangoI(eph_i ti) {
     for (int i = 0; i<ti.size(); i++) {
-        if (not individuoValido(ti[i]))
+        if (!individuoValido(ti[i]))
             return false;
     }
     return true;
@@ -181,16 +181,16 @@ bool hogarValido(hogar h) {
 
 bool valoresEnRangoH (eph_h th) {
     for (int h = 0; h<th.size(); h++) {
-        if (not hogarValido(th[h]))
+        if (!hogarValido(th[h]))
             return false;
     }
     return true;
 }
 
 bool esValida(eph_h th, eph_i ti) {
-    if (not vacia(ti) && not vacia(th) && esMatriz(ti) && esMatriz(th) && cantidadCorrectaDeColumnasI(ti) &&
-        cantidadCorrectaDeColumnasH(th) && not hayIndividuosSinHogares(ti, th) && not hayHogaresSinIndividuos(ti, th) &&
-        not hayRepetidosI(ti) && not hayRepetidosH(th) && mismoAnioYTrimestre(ti, th) && menosDe21MiembrosPorHogar(th, ti) &&
+    if (!vacia(ti) && !vacia(th) && esMatriz(ti) && esMatriz(th) && cantidadCorrectaDeColumnasI(ti) &&
+        cantidadCorrectaDeColumnasH(th) && !hayIndividuosSinHogares(ti, th) && !hayHogaresSinIndividuos(ti, th) &&
+        !hayRepetidosI(ti) && !hayRepetidosH(th) && mismoAnioYTrimestre(ti, th) && menosDe21MiembrosPorHogar(th, ti) &&
         cantidadValidaDormitorios(th) && valoresEnRangoI(ti) && valoresEnRangoH(th))
         return true;
     else
@@ -400,7 +400,120 @@ void buscarSiguienteHogar(eph_h th, eph_i ti, int dif, vector<hogar>& temp, int 
         }
     }
 }
+// Auxiliares del ejercicio 4
+float proporcionTeleworking(eph_h th, eph_i ti) {
+    if(cantIndividuosQueTrabajan(th, ti) > 0) {
+        return (float) cantIndividuosTrabajandoEnSuVivienda(th, ti) / (float) cantIndividuosQueTrabajan(th, ti);
+    } else {
+        return 0;
+    }
+}
 
+int cantIndividuosTrabajandoEnSuVivienda(eph_h th, eph_i ti) {
+    int sum = 0;
+    for(int indice = 0; indice < ti.capacity(); indice++) {
+        individuo i = ti[indice];
+        if(trabaja(i) && trabajaEnSuVivienda(i, th) && individuoEnHogarValido(i, th)) {
+            sum++;
+        }
+    }
+    return sum;
+}
+
+int cantIndividuosQueTrabajan(eph_h th, eph_i ti) {
+    int sum = 0;
+    for(int indice = 0; indice < ti.capacity(); indice++) {
+        individuo i = ti[indice];
+        if(trabaja(i) && individuoEnHogarValido(i, th)) {
+            sum++;
+        }
+    }
+    return sum;
+}
+
+bool trabajaEnSuVivienda(individuo i, eph_h th) {
+    return realizaSusTareasEnEsteHogar(i) && suHogarTieneEspaciosReservadorParaElTrabajo(i, th);
+}
+
+bool individuoEnHogarValido(individuo i, eph_h th) {
+    return esDeCiudadGrande(i, th) && suHogarEsCasaODepartamento(i, th);
+}
+
+bool trabaja(individuo i) {
+    return i[ItemInd::ESTADO] == 1;
+}
+
+int anio(eph_i ti) {
+    return ti[0][ItemInd::INDANIO];
+}
+
+int trimestre(eph_i ti) {
+    return ti[0][ItemInd::INDTRIMESTRE];
+}
+
+bool esDeCiudadGrande(individuo i, eph_h th) {
+    for(int indice = 0; indice < th.capacity(); indice++) {
+        if(esSuHogar(th[indice], i) && th[indice][ItemHogar::MAS_500]) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool suHogarTieneEspaciosReservadorParaElTrabajo(individuo i, eph_h th) {
+    for(int indice = 0; indice < th.capacity(); indice++) {
+        if(esSuHogar(th[indice], i) && tieneEspaciosReservadosParaElTrabajo(th[indice])) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool suHogarEsCasaODepartamento(individuo i, eph_h th) {
+    for(int indice = 0; indice < th.capacity(); indice++) {
+        if(esSuHogar(th[indice], i) && esCasaODepartamento(th[indice])) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool esCasaODepartamento(hogar h) {
+    return h[ItemHogar::IV1] == 1 || h[ItemHogar::IV1] == 2;
+}
+
+bool realizaSusTareasEnEsteHogar(individuo i) {
+    return i[ItemInd::PP04G] == 6;
+}
+
+bool tieneEspaciosReservadosParaElTrabajo(hogar h) {
+    return h[ItemHogar::II3] == 1;
+}
+
+// Auxiliares del ejercicio 9 
+
+void cambiaRegionesGBAaPampeana(eph_h th, eph_h th0) {
+    for(int indice = 0; indice < th.capacity(); indice++) {
+        hogar h = th[indice];
+        hogar h0 = th0[indice];
+        if(h0[ItemHogar::REGION] == 1) {
+            cambiaRegionGBAaPampeana(h, h0);
+        }
+    }
+}
+
+
+void cambiaRegionGBAaPampeana(hogar &original, hogar nuevo) {
+    original[ItemHogar::HOGCODUSU] = nuevo[ItemHogar::HOGCODUSU];
+    // original[ItemHogar::HOGANIO] = nuevo[ItemHogar::HOGANIO];
+    // original[ItemHogar::HOGTRIMESTRE] = nuevo[ItemHogar::HOGTRIMESTRE];
+    // original[ItemHogar::II7] = nuevo[ItemHogar::II7];
+    // original[ItemHogar::REGION] = nuevo[ItemHogar::REGION];
+    // original[ItemHogar::IV1] = nuevo[ItemHogar::IV1];
+    // original[ItemHogar::IV2] = nuevo[ItemHogar::IV2];
+    // original[ItemHogar::II2] = nuevo[ItemHogar::II2];
+    // original[ItemHogar::II3] = nuevo[ItemHogar::II3];
+}
 // Auxiliares del ejercicio 11
 
 float distanciaEuclidiana(pair < int, int > centro, int latitud, int longitud){
@@ -430,15 +543,4 @@ int cantHogaresEnAnillo(int distDesde, int distHasta, pair < int, int > centro, 
 
     return res;
 }
-
-
-
-
-
-
-
-
-
-
-
-
+        
