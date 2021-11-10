@@ -22,9 +22,6 @@ bool tieneCasaChica(hogar h, eph_i ti);
 // Ejercicio 9
 void cambiaRegionesGBAaPampeana(eph_h th);
 
-// Ejercicio 10
-bool cumpleCondicion(vector<pair<int, dato>> busqueda, individuo ind);
-
 
 #endif //SOLUCION_AUXILIARES_H
 

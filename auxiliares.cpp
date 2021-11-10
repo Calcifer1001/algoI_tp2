@@ -525,51 +525,6 @@ void cambiaRegionesGBAaPampeana(eph_h &th) {
     }
 }
 
-// Auxiliares ejercicio 10
-bool cumpleCondicion(vector < pair < int, dato >> busqueda, individuo ind) {
-    for(int i = 0; i < busqueda.size(); i++) {
-        tuple<int, dato> condicion = busqueda[i];
-        if(!ind[get<0>(condicion)] == get<1>(condicion)) {
-            return false;
-        }
-    }
-    return true;
-}
-
-bool quedanIndividuosEnEncuesta(vector<pair<ItemInd, dato>> busqueda, eph_i ti) {
-    for(int i = 0; i < ti.size(); i++) {
-        if(!cumpleCondicion(busqueda, ti[i])) {
-            return true;
-        }
-    }
-    return false;
-}
-
-bool quedanIndividuosEnResultado(vector<pair<ItemInd, dato>> busqueda, eph_i ti) {
-    for(int i = 0; i < ti.size(); i++) {
-        if(cumpleCondicion(busqueda, ti[i])) {
-            return true;
-        }
-    }
-    return false;
-}
-
-bool encuestaVacia(eph_h th, eph_i ti) {
-    return th.size() == 0 && ti.size() == 0;
-}
-
-bool hayIndividuoQueNoCumpleCondicionEnHogar(hogar h, vector<pair<ItemInd, dato>> busqueda, eph_i ti) {
-    for(int i = 0; i < ti.size(); i++) {
-        individuo ind = ti[i];
-        if(!cumpleCondicion(busqueda, ind) && ind[ItemInd::INDCODUSU] == h[ItemHogar::HOGCODUSU]) {
-            return true;
-        }
-    }
-}
-
-
-
-
 // Auxiliares del ejercicio 11
 
 float distanciaEuclidiana(pair < int, int > centro, int latitud, int longitud){
