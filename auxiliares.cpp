@@ -275,12 +275,12 @@ int cantHogaresConNHabitaciones(eph_h th, int region, int habitaciones){
     return res;
 }
 
-int maximaCantidadDeHabitacionesDeUnaCasaEnRegion(eph_h th, int region){
+int maximaCantidadDeHabitacionesEnRegion(eph_h th, int region){
     int thSize=th.size();
     int res=0;
 
     for(int i=0;i<thSize;i++){
-        if(esCasa(th[i]) && th[i][ItemHogar::REGION] == region && th[i][ItemHogar::IV2] > res){
+        if(th[i][ItemHogar::REGION] == region && th[i][ItemHogar::IV2] > res){
             res = th[i][ItemHogar::IV2];
         }
     }

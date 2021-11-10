@@ -20,7 +20,7 @@ vector < int > histHabitacional ( eph_h th, eph_i ti, int region ) {
 	// TODO
     resultado.clear();
 
-    for(int i=1;i<=maximaCantidadDeHabitacionesDeUnaCasaEnRegion(th, region);i++){
+    for(int i=1;i<=maximaCantidadDeHabitacionesEnRegion(th, region);i++){
         resultado.push_back(cantHogaresConNHabitaciones(th, region, i));
     }
 

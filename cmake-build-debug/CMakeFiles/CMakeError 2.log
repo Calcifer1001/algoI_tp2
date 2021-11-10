@@ -1,0 +1,45 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/silkking/Workspace/Facultad/algoI_tp2/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_10a8f/fast && /usr/bin/make  -f CMakeFiles/cmTC_10a8f.dir/build.make CMakeFiles/cmTC_10a8f.dir/build
+make[1]: se entra en el directorio '/home/silkking/Workspace/Facultad/algoI_tp2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_10a8f.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_10a8f.dir/src.c.o -c /home/silkking/Workspace/Facultad/algoI_tp2/cmake-build-debug/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_10a8f
+/home/silkking/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/212.5457.51/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_10a8f.dir/link.txt --verbose=1
+/usr/bin/cc -rdynamic CMakeFiles/cmTC_10a8f.dir/src.c.o -o cmTC_10a8f 
+CMakeFiles/cmTC_10a8f.dir/src.c.o: En la función `main':
+src.c:(.text+0x3e): referencia a `pthread_create' sin definir
+src.c:(.text+0x4a): referencia a `pthread_detach' sin definir
+src.c:(.text+0x56): referencia a `pthread_cancel' sin definir
+src.c:(.text+0x67): referencia a `pthread_join' sin definir
+src.c:(.text+0x7b): referencia a `pthread_atfork' sin definir
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_10a8f.dir/build.make:98: fallo en las instrucciones para el objetivo 'cmTC_10a8f'
+make[1]: *** [cmTC_10a8f] Error 1
+make[1]: se sale del directorio '/home/silkking/Workspace/Facultad/algoI_tp2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:127: fallo en las instrucciones para el objetivo 'cmTC_10a8f/fast'
+make: *** [cmTC_10a8f/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
