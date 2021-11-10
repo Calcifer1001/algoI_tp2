@@ -113,12 +113,12 @@ bool hayRepetidosH (eph_h th) {
     return false;
 }
 
-int anio(eph_i ti) {
-    return ti[0][ItemInd::INDANIO];
+int anio(eph_h th) {
+    return th[0][ItemHogar::HOGANIO];
 }
 
-int trimestre(eph_i ti) {
-    return ti[0][ItemInd::INDTRIMESTRE];
+int trimestre(eph_h th) {
+    return th[0][ItemHogar::HOGTRIMESTRE];
 }
 
 bool mismoAnioYTrimestre (eph_i ti, eph_h th) {
