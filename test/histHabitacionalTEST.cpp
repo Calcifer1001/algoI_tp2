@@ -48,6 +48,10 @@ TEST(histHabitacionalTEST, vectorLargo4) {
     else {
         vector<int> resultado_esperado = {0, 2, 1, 3};
         EXPECT_EQ( resultado_esperado, histHabitacional(th, ti, 41) );
+        vector<int> solo_una_casa = {1};
+        EXPECT_EQ(solo_una_casa, histHabitacional(th,ti,40));
+        vector<int> caso_no_esta_region = {};
+        EXPECT_EQ(caso_no_esta_region, histHabitacional(th,ti,5));
     }
 
 }
@@ -78,4 +82,31 @@ TEST(histHabitacionalTEST, eph2020_PATAGONIA) {
 
     vector<int> resultado_esperado = { 2, 3, 5, 6, 0 };
     EXPECT_EQ( resultado_esperado, histHabitacional(th, ti, 44) );
+}
+
+TEST(histHabitacionalTEST, noEsTipoHogar) {
+    eph_h th = {{22114, 2020,   3,  319611, 629088, 3,  41, 0,  2,  2,  1,  2}};
+    eph_i ti = {{22114, 2020,   1,  0,  3,  1,  18, 0,  0,  20000,  10}};
+
+    vector<int> res={0,0};
+    EXPECT_EQ(res, histHabitacional(th,ti,41));
+}
+
+TEST(histHabitacionalTEST, otroEj) {
+    eph_h th = {{22114, 2020,   3,  319611, 629088, 3,  41, 0,  1,  3,  1,  2}};
+    eph_i ti = {{22114, 2020,   1,  0,  3,  1,  18, 0,  0,  20000,  10}};
+
+    vector<int> res={0,0,1};
+    EXPECT_EQ(res, histHabitacional(th,ti,41));
+}
+
+TEST(histHabitacionalTEST, unoCasaYOtroNo) {
+    eph_h th = {{22010,2020,3,319938,629513,1,41,0,1,4,3,2},
+                {20101,2020,3,315773,625696,1,41,0,2,2,2,2}};
+    eph_i ti = {{22010,2020,1,0,3,1,65,1,2,15000,8},
+                {22010,2020,7,0,3,2,22,0,0,10000,10},
+                {20101,2020,2,0,3,1,24,0,3,6000,10}};
+
+    vector<int> res={0,0,0,1};
+    EXPECT_EQ(res, histHabitacional(th,ti,41));
 }
