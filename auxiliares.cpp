@@ -476,17 +476,11 @@ bool suHogarEsCasaODepartamento(individuo i, eph_h th) {
 
 
 
-// Auxiliares del ejercicio 9 
-
-void cambiaRegionGBAaPampeana(hogar &original) {
-    original[ItemHogar::HOGCODUSU] = PAMPEANA;
-}
-
+// Auxiliares del ejercicio 9
 void cambiaRegionesGBAaPampeana(eph_h &th) {
     for(int indice = 0; indice < th.capacity(); indice++) {
-        hogar h = th[indice];
-        if(h[ItemHogar::REGION] == GBA) {
-            cambiaRegionGBAaPampeana(h);
+        if(th[indice][ItemHogar::REGION] == GBA) {
+            th[indice][ItemHogar::REGION] = PAMPEANA;
         }
     }
 }
@@ -494,12 +488,21 @@ void cambiaRegionesGBAaPampeana(eph_h &th) {
 // Auxiliares ejercicio 10
 bool cumpleCondicion(vector < pair < int, dato >> busqueda, individuo ind) {
     for(int i = 0; i < busqueda.size(); i++) {
-        tuple<int, dato> condicion = busqueda[i];
-        if(!ind[get<0>(condicion)] == get<1>(condicion)) {
+        pair<int, dato> condicion = busqueda[i];
+        if(ind[condicion.first] != condicion.second) {
             return false;
         }
     }
     return true;
+}
+
+bool hogarEnVector(hogar h, vector<hogar> vec) {
+    for(int i = 0; i < vec.size(); i++) {
+        if(h == vec[i]) {
+            return true;
+        }
+    }
+    return false;
 }
 // Auxiliares del ejercicio 11
 float distanciaEuclidiana(pair < int, int > centro, int latitud, int longitud){
