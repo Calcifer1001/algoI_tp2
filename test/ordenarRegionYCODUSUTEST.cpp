@@ -126,7 +126,7 @@ TEST(ordenarRegionYCODUSUTEST, todasLasRegiones) {
 
 }
 
-TEST(ordenarRegionYCODUSUTEST, yaOrdenadas) {
+TEST(ordenarRegionYCODUSUTEST, tablasYaOrdenadas) {
 
     eph_h th = {   {22866, 2020,   3,  317157, 627217, 2,  1, 1,  1,  2,  2,  2},
                    {20957, 2020,   3,  313965, 623297, 1,  40, 0,  1,  3,  1,  2},
