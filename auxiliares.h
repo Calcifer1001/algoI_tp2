@@ -29,6 +29,7 @@ void cambiaRegionesGBAaPampeana(eph_h &th);
 
 // Ejercicio 10
 bool cumpleCondicion(vector<pair<int, dato>> busqueda, individuo ind);
+bool hogarEnVector(hogar h, vector<hogar> vec);
 
 // Ejercicio 11
 int cantHogaresEnAnillo(int distDesde, int distHasta, pair < int, int > centro, eph_h th);

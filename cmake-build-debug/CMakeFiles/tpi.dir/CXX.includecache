@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/auxiliares.h
+/home/silkking/Workspace/Facultad/algoI_tp2/auxiliares.h
 definiciones.h
-/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/definiciones.h
+/home/silkking/Workspace/Facultad/algoI_tp2/definiciones.h
 
-/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/definiciones.h
+/home/silkking/Workspace/Facultad/algoI_tp2/definiciones.h
 iostream
 -
 vector
@@ -18,15 +18,15 @@ vector
 tuple
 -
 
-/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/ejercicios.cpp
+/home/silkking/Workspace/Facultad/algoI_tp2/ejercicios.cpp
 ejercicios.h
-/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/ejercicios.h
+/home/silkking/Workspace/Facultad/algoI_tp2/ejercicios.h
 auxiliares.h
-/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/auxiliares.h
+/home/silkking/Workspace/Facultad/algoI_tp2/auxiliares.h
 definiciones.h
-/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/definiciones.h
+/home/silkking/Workspace/Facultad/algoI_tp2/definiciones.h
 
-/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/ejercicios.h
+/home/silkking/Workspace/Facultad/algoI_tp2/ejercicios.h
 iostream
 -
 vector
@@ -36,5 +36,5 @@ math.h
 tuple
 -
 definiciones.h
-/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/definiciones.h
+/home/silkking/Workspace/Facultad/algoI_tp2/definiciones.h
 

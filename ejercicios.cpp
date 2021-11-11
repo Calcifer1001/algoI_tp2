@@ -147,47 +147,55 @@ vector < int > histogramaDeAnillosConcentricos( eph_h th, eph_i ti, pair < int, 
 
 // Implementacion Problema 10
 pair < eph_h, eph_i > quitarIndividuos(eph_i & ti, eph_h & th, vector < pair < int, dato > >  busqueda ){
-    eph_h rth = {{-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1}};
-    eph_i rti = {{-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1}};
+    eph_h rth = {};
+    eph_i rti = {};
     pair < eph_h, eph_i > resp = make_pair(rth, rti);
+    // Recorro y agrego a los individuos que cumplen la condicion a la respuesta
     for (int i = 0; i < ti.size(); ++i) {
         individuo ind = ti[i];
         if(cumpleCondicion(busqueda, ind)) {
             resp.second.push_back(ind);
         }
     }
-    vector<bool> hogarSigueTeniendoIndividuoEnEncuesta;
-    for (int i = 0; i < resp.second.size(); ++i) {
-        individuo individuoAEliminar = resp.second[i];
+    // Recorro los individuos agregados a la respuesta para agregar sus hogares y eliminarlos del vector inicial
+    for(int i = 0; i < resp.second.size(); ++i) {
+        individuo individuoAgregado = resp.second[i];
+        // Agrego los hogares a la respuesta
+        for(int indexHogar = 0; indexHogar < th.size(); ++indexHogar) {
+            if(individuoAgregado[ItemInd::INDCODUSU] == th[indexHogar][ItemHogar::HOGCODUSU] && !hogarEnVector(th[indexHogar], resp.first)) {
+                resp.first.push_back(th[indexHogar]);
+                break;
+            }
+        }
+        // Elimino a los individuos agregados del vector original
         eph_i::iterator it = ti.begin();
-        bool individuoDistintoEnMismoHogar = false;
         while (it != ti.end()) {
             individuo individuoAComparar = *it;
-            if(individuoAEliminar == individuoAComparar) {
-                it = ti.erase(it);
-            } else {
-                ++it;
-                individuoDistintoEnMismoHogar |= individuoAComparar[ItemInd::INDCODUSU] == individuoAEliminar[ItemInd::INDCODUSU];
+            if(individuoAgregado == individuoAComparar) {
+                ti.erase(it);
+                break;
             }
-        }
-        hogarSigueTeniendoIndividuoEnEncuesta.push_back(individuoDistintoEnMismoHogar);
-    }
-    for(int i = 0; i < resp.second.size(); i++) {
-        if(!hogarSigueTeniendoIndividuoEnEncuesta[i]) {
-            individuo ind = resp.second[i];
-            eph_h::iterator hogarIterator = th.begin();
-            while(hogarIterator != th.end()) {
-                hogar h = *hogarIterator;
-                if(h[ItemHogar::HOGCODUSU] == ind[ItemInd::INDCODUSU]) {
-                    resp.first.push_back(h);
-                    hogarIterator = th.erase(hogarIterator);
-                    --hogarIterator;
-                }
-                ++hogarIterator;
-            }
+            it++;
         }
     }
-	// TODO
+    // Recorro los hogares y los individuos restantes del vector original para eliminar los hogares que ya no estèn
+    eph_h::iterator iterador = th.begin();
+    while (iterador != th.end()) {
+        hogar hogarABuscar = *iterador;
+        bool hogarTieneIndividuo = false;
+        for(int i = 0; i < ti.size(); i++) {
+            individuo ind = ti[i];
+            if(hogarABuscar[ItemHogar::HOGCODUSU] == ind[ItemInd::INDCODUSU]) {
+                hogarTieneIndividuo = true;
+                break;
+            }
+        }
+        if(!hogarTieneIndividuo) {
+            th.erase(iterador);
+            iterador--;
+        }
+        iterador++;
+    }
 
 
 	
