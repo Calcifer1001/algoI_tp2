@@ -113,21 +113,15 @@ bool hayRepetidosH (eph_h th) {
     return false;
 }
 
-int anio(eph_h th) {
-    return th[0][ItemHogar::HOGANIO];
-}
-
-int trimestre(eph_h th) {
-    return th[0][ItemHogar::HOGTRIMESTRE];
-}
-
 bool mismoAnioYTrimestre (eph_i ti, eph_h th) {
+    int anio = th[0][ItemHogar::HOGANIO];
+    int trimestre = th[0][ItemHogar::HOGTRIMESTRE];
     for (int i = 0; i<ti.size(); i++) {
-        if ((ti[i][ItemInd::INDANIO] != anio(th)) || (ti[i][ItemInd::INDTRIMESTRE] != trimestre(th)))
+        if ((ti[i][ItemInd::INDANIO] != anio) || (ti[i][ItemInd::INDTRIMESTRE] != trimestre))
             return false;
     }
     for (int h = 0; h < th.size(); h++) {
-        if ((th[h][ItemHogar::HOGANIO] != anio(th)) || (th[h][ItemHogar::HOGTRIMESTRE] != trimestre(th)))
+        if ((th[h][ItemHogar::HOGANIO] != anio) || (th[h][ItemHogar::HOGTRIMESTRE] != trimestre))
             return false;
     }
     return true;
@@ -532,4 +526,5 @@ int cantHogaresEnAnillo(int distDesde, int distHasta, pair < int, int > centro, 
 
     return res;
 }
-        
+
+
