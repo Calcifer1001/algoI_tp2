@@ -22,7 +22,7 @@ bool tieneCasaChica(hogar h, eph_i ti);
 // Ejercicio 8
 int ingresos(hogar h, eph_i ti);
 int diferenciaDeIngresos(eph_i ti, hogar hog1, hogar hog2);
-void buscarSiguienteHogar(eph_h th, eph_i ti, int dif, vector<hogar>& temp, int hogarAnterior, vector<int> hogaresAnteriores, int maximoActual);
+void buscarSiguientesHogares(eph_h th, eph_i ti, int dif, vector<hogar>& temp, int hogarAnterior, int maximoActual);
 
 // Ejercicio 9
 void cambiaRegionesGBAaPampeana(eph_h &th);

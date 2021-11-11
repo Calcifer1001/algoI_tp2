@@ -719,10 +719,10 @@ function _ZNKSt3__110__equal_toIiiEclERKiS3_ called 312 returned 100% blocks exe
         -:  712:struct __less<_T1, _T1>
         -:  713:{
         -:  714:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
-function _ZNKSt3__16__lessImmEclERKmS3_ called 90 returned 100% blocks executed 100%
+function _ZNKSt3__16__lessImmEclERKmS3_ called 86 returned 100% blocks executed 100%
 function _ZNKSt3__16__lessIllEclERKlS3_ called 0 returned 0% blocks executed 0%
-       90:  715:    bool operator()(const _T1& __x, const _T1& __y) const {return __x < __y;}
-       90:  715-block  0
+       86:  715:    bool operator()(const _T1& __x, const _T1& __y) const {return __x < __y;}
+       86:  715-block  0
     $$$$$:  715-block  1
         -:  716:};
         -:  717:
@@ -2703,27 +2703,27 @@ function _ZNSt3__1L3minIlEERKT_S3_S3_ called 0 returned 0% blocks executed 0%
         -: 2645:_LIBCPP_NODISCARD_EXT inline
         -: 2646:_LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
         -: 2647:const _Tp&
-function _ZNSt3__1L3maxImNS_6__lessImmEEEERKT_S5_S5_T0_ called 47 returned 100% blocks executed 100%
-       47: 2648:max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+function _ZNSt3__1L3maxImNS_6__lessImmEEEERKT_S5_S5_T0_ called 43 returned 100% blocks executed 100%
+       43: 2648:max(const _Tp& __a, const _Tp& __b, _Compare __comp)
         -: 2649:{
-       47: 2650:    return __comp(__a, __b) ? __b : __a;
-       47: 2650-block  0
-branch  0 taken 12
-branch  1 taken 35
-       12: 2650-block  1
-       35: 2650-block  2
-       47: 2650-block  3
+       43: 2650:    return __comp(__a, __b) ? __b : __a;
+       43: 2650-block  0
+branch  0 taken 10
+branch  1 taken 33
+       10: 2650-block  1
+       33: 2650-block  2
+       43: 2650-block  3
         -: 2651:}
         -: 2652:
         -: 2653:template <class _Tp>
         -: 2654:_LIBCPP_NODISCARD_EXT inline
         -: 2655:_LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
         -: 2656:const _Tp&
-function _ZNSt3__1L3maxImEERKT_S3_S3_ called 47 returned 100% blocks executed 100%
-       47: 2657:max(const _Tp& __a, const _Tp& __b)
+function _ZNSt3__1L3maxImEERKT_S3_S3_ called 43 returned 100% blocks executed 100%
+       43: 2657:max(const _Tp& __a, const _Tp& __b)
         -: 2658:{
-       47: 2659:    return _VSTD::max(__a, __b, __less<_Tp>());
-       47: 2659-block  0
+       43: 2659:    return _VSTD::max(__a, __b, __less<_Tp>());
+       43: 2659-block  0
         -: 2660:}
         -: 2661:
         -: 2662:#ifndef _LIBCPP_CXX03_LANG

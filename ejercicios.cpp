@@ -96,22 +96,17 @@ vector < hogar > muestraHomogenea( eph_h & th, eph_i & ti ){
     // TODO
     resp.clear();
     vector < hogar > temp;
-    vector<int> hogaresAnteriores;
     int diferenciaTemp;
 
     for(int i=0;i<th.size();i++){
         for(int j=0;j<th.size();j++){
-
             temp.push_back(th[i]);
-            hogaresAnteriores.push_back(th[i][ItemHogar::HOGCODUSU]);
 
             if(i !=j && diferenciaDeIngresos(ti,th[i], th[j])>0){
 
                 temp.push_back(th[j]);
-                hogaresAnteriores.push_back(th[j][ItemHogar::HOGCODUSU]);
-
                 diferenciaTemp = diferenciaDeIngresos(ti, th[i], th[j]);
-                buscarSiguienteHogar(th, ti, diferenciaTemp, temp, j, hogaresAnteriores, ingresos(th[j], ti));
+                buscarSiguientesHogares(th, ti, diferenciaTemp, temp, j, ingresos(th[j], ti));
 
                 if(temp.size()>resp.size()){
                     resp.clear();
@@ -119,17 +114,11 @@ vector < hogar > muestraHomogenea( eph_h & th, eph_i & ti ){
                         resp.push_back(temp[i]);
                     }
                 }
-
-                temp.clear();
-                hogaresAnteriores.clear();
             }
 
             temp.clear();
-            hogaresAnteriores.clear();
         }
-
     }
-
     return  resp;
 }
 

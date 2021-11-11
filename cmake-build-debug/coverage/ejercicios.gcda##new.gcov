@@ -239,8 +239,8 @@
         -:  234:#endif
         -:  235:}
         -:  236:
-function _ZNSt3__1L17__libcpp_allocateEmm called 41 returned 100% blocks executed 100%
-       41:  237:inline _LIBCPP_INLINE_VISIBILITY void *__libcpp_allocate(size_t __size, size_t __align) {
+function _ZNSt3__1L17__libcpp_allocateEmm called 54453 returned 100% blocks executed 100%
+    54453:  237:inline _LIBCPP_INLINE_VISIBILITY void *__libcpp_allocate(size_t __size, size_t __align) {
         -:  238:#ifndef _LIBCPP_HAS_NO_ALIGNED_ALLOCATION
         -:  239:  if (__is_overaligned_for_new(__align)) {
         -:  240:    const align_val_t __align_val = static_cast<align_val_t>(__align);
@@ -256,19 +256,19 @@ function _ZNSt3__1L17__libcpp_allocateEmm called 41 returned 100% blocks execute
         -:  250:#ifdef _LIBCPP_HAS_NO_BUILTIN_OPERATOR_NEW_DELETE
         -:  251:  return ::operator new(__size);
         -:  252:#else
-       41:  253:  return __builtin_operator_new(__size);
-       41:  253-block  0
+    54453:  253:  return __builtin_operator_new(__size);
+    54453:  253-block  0
         -:  254:#endif
         -:  255:}
         -:  256:
         -:  257:struct _DeallocateCaller {
         -:  258:  static inline _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__117_DeallocateCaller33__do_deallocate_handle_size_alignEPvmm called 45 returned 100% blocks executed 100%
-       45:  259:  void __do_deallocate_handle_size_align(void *__ptr, size_t __size, size_t __align) {
+function _ZNSt3__117_DeallocateCaller33__do_deallocate_handle_size_alignEPvmm called 43569 returned 100% blocks executed 100%
+    43569:  259:  void __do_deallocate_handle_size_align(void *__ptr, size_t __size, size_t __align) {
         -:  260:#if defined(_LIBCPP_HAS_NO_ALIGNED_ALLOCATION)
         -:  261:    ((void)__align);
-       45:  262:    return __do_deallocate_handle_size(__ptr, __size);
-       45:  262-block  0
+    43569:  262:    return __do_deallocate_handle_size(__ptr, __size);
+    43569:  262-block  0
         -:  263:#else
         -:  264:    if (__is_overaligned_for_new(__align)) {
         -:  265:      const align_val_t __align_val = static_cast<align_val_t>(__align);
@@ -349,11 +349,11 @@ function _ZNSt3__117_DeallocateCaller9__do_callEPv called 0 returned 0% blocks e
         -:  336:  }
         -:  337:};
         -:  338:
-function _ZNSt3__1L19__libcpp_deallocateEPvmm called 45 returned 100% blocks executed 100%
-       45:  339:inline _LIBCPP_INLINE_VISIBILITY void __libcpp_deallocate(void* __ptr, size_t __size, size_t __align) {
-       45:  340:  _DeallocateCaller::__do_deallocate_handle_size_align(__ptr, __size, __align);
-       45:  341:}
-       45:  341-block  0
+function _ZNSt3__1L19__libcpp_deallocateEPvmm called 43569 returned 100% blocks executed 100%
+    43569:  339:inline _LIBCPP_INLINE_VISIBILITY void __libcpp_deallocate(void* __ptr, size_t __size, size_t __align) {
+    43569:  340:  _DeallocateCaller::__do_deallocate_handle_size_align(__ptr, __size, __align);
+    43569:  341:}
+    43569:  341-block  0
         -:  342:
         -:  343:inline _LIBCPP_INLINE_VISIBILITY void __libcpp_deallocate_unsized(void* __ptr, size_t __align) {
         -:  344:  _DeallocateCaller::__do_deallocate_handle_align(__ptr, __align);

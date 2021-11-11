@@ -59,21 +59,15 @@
         -:   54:    typedef typename add_lvalue_reference<allocator_type>::type __alloc_const_ref;
         -:   55:
 function _ZNSt3__114__split_bufferINS_6vectorIiNS_9allocatorIiEEEERNS2_IS4_EEE7__allocEv called 15164 returned 100% blocks executed 100%
-function _ZNSt3__114__split_bufferIiRNS_9allocatorIiEEE7__allocEv called 261153 returned 100% blocks executed 100%
-   276317:   56:    _LIBCPP_INLINE_VISIBILITY __alloc_rr&           __alloc() _NOEXCEPT         {return __end_cap_.second();}
+    15164:   56:    _LIBCPP_INLINE_VISIBILITY __alloc_rr&           __alloc() _NOEXCEPT         {return __end_cap_.second();}
     15164:   56-block  0
-   261153:   56-block  1
         -:   57:    _LIBCPP_INLINE_VISIBILITY const __alloc_rr&     __alloc() const _NOEXCEPT   {return __end_cap_.second();}
 function _ZNSt3__114__split_bufferINS_6vectorIiNS_9allocatorIiEEEERNS2_IS4_EEE9__end_capEv called 404 returned 100% blocks executed 100%
-function _ZNSt3__114__split_bufferIiRNS_9allocatorIiEEE9__end_capEv called 108842 returned 100% blocks executed 100%
-   109246:   58:    _LIBCPP_INLINE_VISIBILITY pointer&              __end_cap() _NOEXCEPT       {return __end_cap_.first();}
+      404:   58:    _LIBCPP_INLINE_VISIBILITY pointer&              __end_cap() _NOEXCEPT       {return __end_cap_.first();}
       404:   58-block  0
-   108842:   58-block  1
 function _ZNKSt3__114__split_bufferINS_6vectorIiNS_9allocatorIiEEEERNS2_IS4_EEE9__end_capEv called 181 returned 100% blocks executed 100%
-function _ZNKSt3__114__split_bufferIiRNS_9allocatorIiEEE9__end_capEv called 43531 returned 100% blocks executed 100%
-    43712:   59:    _LIBCPP_INLINE_VISIBILITY const pointer&        __end_cap() const _NOEXCEPT {return __end_cap_.first();}
+      181:   59:    _LIBCPP_INLINE_VISIBILITY const pointer&        __end_cap() const _NOEXCEPT {return __end_cap_.first();}
       181:   59-block  0
-    43531:   59-block  1
         -:   60:
         -:   61:    _LIBCPP_INLINE_VISIBILITY
         -:   62:    __split_buffer()
@@ -102,18 +96,14 @@ function _ZNKSt3__114__split_bufferIiRNS_9allocatorIiEEE9__end_capEv called 4353
         -:   85:
         -:   86:    _LIBCPP_INLINE_VISIBILITY
 function _ZNSt3__114__split_bufferINS_6vectorIiNS_9allocatorIiEEEERNS2_IS4_EEE5clearEv called 202 returned 100% blocks executed 100%
-function _ZNSt3__114__split_bufferIiRNS_9allocatorIiEEE5clearEv called 54421 returned 100% blocks executed 100%
-    54623:   87:    void clear() _NOEXCEPT
-    54623:   88:        {__destruct_at_end(__begin_);}
+      202:   87:    void clear() _NOEXCEPT
+      202:   88:        {__destruct_at_end(__begin_);}
       202:   88-block  0
-    54421:   88-block  1
         -:   89:    _LIBCPP_INLINE_VISIBILITY size_type size() const {return static_cast<size_type>(__end_ - __begin_);}
         -:   90:    _LIBCPP_INLINE_VISIBILITY bool empty()     const {return __end_ == __begin_;}
 function _ZNKSt3__114__split_bufferINS_6vectorIiNS_9allocatorIiEEEERNS2_IS4_EEE8capacityEv called 181 returned 100% blocks executed 100%
-function _ZNKSt3__114__split_bufferIiRNS_9allocatorIiEEE8capacityEv called 43531 returned 100% blocks executed 100%
-    43712:   91:    _LIBCPP_INLINE_VISIBILITY size_type capacity() const {return static_cast<size_type>(__end_cap() - __first_);}
+      181:   91:    _LIBCPP_INLINE_VISIBILITY size_type capacity() const {return static_cast<size_type>(__end_cap() - __first_);}
       181:   91-block  0
-    43531:   91-block  1
         -:   92:    _LIBCPP_INLINE_VISIBILITY size_type __front_spare() const {return static_cast<size_type>(__begin_ - __first_);}
         -:   93:    _LIBCPP_INLINE_VISIBILITY size_type __back_spare() const {return static_cast<size_type>(__end_cap() - __end_);}
         -:   94:
@@ -163,11 +153,9 @@ function _ZNKSt3__114__split_bufferIiRNS_9allocatorIiEEE8capacityEv called 43531
         -:  138:
         -:  139:    _LIBCPP_INLINE_VISIBILITY
 function _ZNSt3__114__split_bufferINS_6vectorIiNS_9allocatorIiEEEERNS2_IS4_EEE17__destruct_at_endEPS4_ called 202 returned 100% blocks executed 100%
-function _ZNSt3__114__split_bufferIiRNS_9allocatorIiEEE17__destruct_at_endEPi called 54421 returned 100% blocks executed 100%
-    54623:  140:    void __destruct_at_end(pointer __new_last) _NOEXCEPT
-    54623:  141:        {__destruct_at_end(__new_last, false_type());}
+      202:  140:    void __destruct_at_end(pointer __new_last) _NOEXCEPT
+      202:  141:        {__destruct_at_end(__new_last, false_type());}
       202:  141-block  0
-    54421:  141-block  1
         -:  142:    _LIBCPP_INLINE_VISIBILITY
         -:  143:        void __destruct_at_end(pointer __new_last, false_type) _NOEXCEPT;
         -:  144:    _LIBCPP_INLINE_VISIBILITY
@@ -327,32 +315,21 @@ function _ZNSt3__114__split_bufferIiRNS_9allocatorIiEEE17__destruct_at_endEPi ca
         -:  298:inline _LIBCPP_INLINE_VISIBILITY
         -:  299:void
 function _ZNSt3__114__split_bufferINS_6vectorIiNS_9allocatorIiEEEERNS2_IS4_EEE17__destruct_at_endEPS4_NS_17integral_constantIbLb0EEE called 202 returned 100% blocks executed 83%
-function _ZNSt3__114__split_bufferIiRNS_9allocatorIiEEE17__destruct_at_endEPiNS_17integral_constantIbLb0EEE called 54421 returned 100% blocks executed 83%
-    54623:  300:__split_buffer<_Tp, _Allocator>::__destruct_at_end(pointer __new_last, false_type) _NOEXCEPT
+      202:  300:__split_buffer<_Tp, _Allocator>::__destruct_at_end(pointer __new_last, false_type) _NOEXCEPT
         -:  301:{
-   232605:  302:    while (__new_last != __end_)
+    14983:  302:    while (__new_last != __end_)
       202:  302-block  0
     14983:  302-block  1
 branch  0 taken 14781
 branch  1 taken 202
     14781:  302-block  2
-    54421:  302-block  3
-   217622:  302-block  4
-branch  2 taken 163201
-branch  3 taken 54421
-   163201:  302-block  5
-   177982:  303:        __alloc_traits::destroy(__alloc(), __to_address(--__end_));
+    14781:  303:        __alloc_traits::destroy(__alloc(), __to_address(--__end_));
     14781:  303-block  0
 branch  0 taken 14781
 branch  1 taken 0
     $$$$$:  303-block  1
-   163201:  303-block  2
-branch  2 taken 163201
-branch  3 taken 0
-    $$$$$:  303-block  3
-    54623:  304:}
+      202:  304:}
       202:  304-block  0
-    54421:  304-block  1
         -:  305:
         -:  306:template <class _Tp, class _Allocator>
         -:  307:inline _LIBCPP_INLINE_VISIBILITY
@@ -365,29 +342,20 @@ branch  3 taken 0
         -:  314:template <class _Tp, class _Allocator>
 function _ZNSt3__114__split_bufferINS_6vectorIiNS_9allocatorIiEEEERNS2_IS4_EEEC1EmmS6_ called 202 returned 100% blocks executed 100%
 function _ZNSt3__114__split_bufferINS_6vectorIiNS_9allocatorIiEEEERNS2_IS4_EEEC2EmmS6_ called 202 returned 100% blocks executed 75%
-function _ZNSt3__114__split_bufferIiRNS_9allocatorIiEEEC1EmmS3_ called 54421 returned 100% blocks executed 100%
-function _ZNSt3__114__split_bufferIiRNS_9allocatorIiEEEC2EmmS3_ called 54421 returned 100% blocks executed 75%
-   109246:  315:__split_buffer<_Tp, _Allocator>::__split_buffer(size_type __cap, size_type __start, __alloc_rr& __a)
-    54623:  316:    : __end_cap_(nullptr, __a)
-   109246:  317:{
-    54623:  318:    __first_ = __cap != 0 ? __alloc_traits::allocate(__alloc(), __cap) : nullptr;
+      404:  315:__split_buffer<_Tp, _Allocator>::__split_buffer(size_type __cap, size_type __start, __alloc_rr& __a)
+      202:  316:    : __end_cap_(nullptr, __a)
+      404:  317:{
+      202:  318:    __first_ = __cap != 0 ? __alloc_traits::allocate(__alloc(), __cap) : nullptr;
       202:  318-block  0
 branch  0 taken 202
 branch  1 taken 0
       202:  318-block  1
     $$$$$:  318-block  2
-    54421:  318-block  3
-branch  2 taken 54421
-branch  3 taken 0
-    54421:  318-block  4
-    $$$$$:  318-block  5
-    54623:  319:    __begin_ = __end_ = __first_ + __start;
-    54623:  320:    __end_cap() = __first_ + __cap;
-   109246:  321:}
+      202:  319:    __begin_ = __end_ = __first_ + __start;
+      202:  320:    __end_cap() = __first_ + __cap;
+      404:  321:}
       202:  321-block  0
       202:  321-block  1
-    54421:  321-block  2
-    54421:  321-block  3
         -:  322:
         -:  323:template <class _Tp, class _Allocator>
         -:  324:inline
@@ -414,34 +382,22 @@ branch  3 taken 0
         -:  345:template <class _Tp, class _Allocator>
 function _ZNSt3__114__split_bufferINS_6vectorIiNS_9allocatorIiEEEERNS2_IS4_EEED1Ev called 202 returned 100% blocks executed 100%
 function _ZNSt3__114__split_bufferINS_6vectorIiNS_9allocatorIiEEEERNS2_IS4_EEED2Ev called 202 returned 100% blocks executed 80%
-function _ZNSt3__114__split_bufferIiRNS_9allocatorIiEEED1Ev called 54421 returned 100% blocks executed 100%
-function _ZNSt3__114__split_bufferIiRNS_9allocatorIiEEED2Ev called 54421 returned 100% blocks executed 80%
-   109246:  346:__split_buffer<_Tp, _Allocator>::~__split_buffer()
-    54623:  347:{
-    54623:  348:    clear();
-    54623:  349:    if (__first_)
+      404:  346:__split_buffer<_Tp, _Allocator>::~__split_buffer()
+      202:  347:{
+      202:  348:    clear();
+      202:  349:    if (__first_)
       202:  349-block  0
 branch  0 taken 21
 branch  1 taken 181
-    54421:  349-block  1
-branch  2 taken 10890
-branch  3 taken 43531
-    43712:  350:        __alloc_traits::deallocate(__alloc(), __first_, capacity());
+      181:  350:        __alloc_traits::deallocate(__alloc(), __first_, capacity());
       181:  350-block  0
 branch  0 taken 181
 branch  1 taken 0
       181:  350-block  1
     $$$$$:  350-block  2
-    43531:  350-block  3
-branch  2 taken 43531
-branch  3 taken 0
-    43531:  350-block  4
-    $$$$$:  350-block  5
-   109246:  351:}
+      404:  351:}
       202:  351-block  0
       202:  351-block  1
-    54421:  351-block  2
-    54421:  351-block  3
         -:  352:
         -:  353:#ifndef _LIBCPP_CXX03_LANG
         -:  354:

@@ -375,32 +375,16 @@ int ingresos(hogar h, eph_i ti){
     return res;
 }
 
-bool estaContenido(int actual, vector<int> anteriores){
-    bool res=false;
-
-    for(int i=0;i<anteriores.size();i++){
-        if(anteriores[i]==actual){
-            res=true;
-        }
-    }
-
-    return res;
-}
-
 int diferenciaDeIngresos(eph_i ti, hogar hog1, hogar hog2){
     return ingresos(hog2,ti)-ingresos(hog1,ti);
 }
 
-void buscarSiguienteHogar(eph_h th, eph_i ti, int dif, vector<hogar>& temp, int hogarAnterior, vector<int> hogaresAnteriores, int maximoActual){
+void buscarSiguientesHogares(eph_h th, eph_i ti, int dif, vector<hogar>& temp, int hogarAnterior, int maximoActual){
     for(int k=0;k<th.size();k++){
-        if(hogarAnterior != k && diferenciaDeIngresos(ti, th[hogarAnterior], th[k]) == dif &&
-           !estaContenido(th[k][ItemHogar::HOGCODUSU], hogaresAnteriores) &&
-           ingresos(th[k], ti)>maximoActual){
-
-                temp.push_back(th[k]);
-                hogaresAnteriores.push_back(th[k][ItemHogar::HOGCODUSU]);
-                maximoActual = ingresos(th[k], ti);
-                buscarSiguienteHogar(th, ti, dif, temp, k, hogaresAnteriores, maximoActual);
+        if(hogarAnterior != k && diferenciaDeIngresos(ti, th[hogarAnterior], th[k]) == dif && ingresos(th[k], ti)>maximoActual){
+            temp.push_back(th[k]);
+            maximoActual = ingresos(th[k], ti);
+            buscarSiguientesHogares(th, ti, dif, temp, k, maximoActual);
         }
     }
 }
