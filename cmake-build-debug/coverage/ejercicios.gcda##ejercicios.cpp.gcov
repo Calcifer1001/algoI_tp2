@@ -1,0 +1,759 @@
+        -:    0:Source:/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/ejercicios.cpp
+        -:    0:Graph:/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/cmake-build-debug/CMakeFiles/tpi.dir/ejercicios.gcno
+        -:    0:Data:/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/cmake-build-debug/CMakeFiles/tpi.dir/ejercicios.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "ejercicios.h"
+        -:    2:#include "auxiliares.h"
+        -:    3:#include "definiciones.h"
+        -:    4:
+        -:    5:using namespace std;
+        -:    6:// Implementacion Problema 1
+function _Z16esEncuestaValidaNSt3__16vectorINS0_IiNS_9allocatorIiEEEENS1_IS3_EEEES5_ called 52 returned 100% blocks executed 60%
+       52:    7:bool esEncuestaValida ( eph_h th, eph_i ti ) {
+        -:    8:    // return esValida(th, ti);
+       52:    9:    if (esValida(th, ti))
+       52:    9-block  0
+branch  0 taken 52
+branch  1 taken 0
+       52:    9-block  1
+branch  2 taken 0
+branch  3 taken 52
+       52:    9-block  2
+branch  4 taken 39
+branch  5 taken 13
+    $$$$$:    9-block  3
+    $$$$$:    9-block  4
+    $$$$$:    9-block  5
+       39:   10:        return true;
+       39:   10-block  0
+        -:   11:    else
+       13:   12:        return false;
+       13:   12-block  0
+        -:   13:
+       52:   14:}
+    $$$$$:   14-block  0
+       52:   14-block  1
+        -:   15:
+        -:   16:// Implementacion Problema 2
+function _Z16histHabitacionalNSt3__16vectorINS0_IiNS_9allocatorIiEEEENS1_IS3_EEEES5_i called 4 returned 100% blocks executed 64%
+        4:   17:vector < int > histHabitacional ( eph_h th, eph_i ti, int region ) {
+        4:   18:	vector < int > resultado = {-1, -1, -1, -1, -1, -1};
+        -:   19:	
+        -:   20:	// TODO
+        4:   21:    resultado.clear();
+        -:   22:
+       24:   23:    for(int i=1;i<=maximaCantidadDeHabitacionesEnRegion(th, region);i++){
+        4:   23-block  0
+       24:   23-block  1
+branch  0 taken 24
+branch  1 taken 0
+       24:   23-block  2
+branch  2 taken 24
+branch  3 taken 0
+       24:   23-block  3
+branch  4 taken 20
+branch  5 taken 4
+       20:   23-block  4
+    $$$$$:   23-block  5
+       20:   24:        resultado.push_back(cantHogaresConNHabitaciones(th, region, i));
+       20:   24-block  0
+branch  0 taken 20
+branch  1 taken 0
+       20:   24-block  1
+branch  2 taken 20
+branch  3 taken 0
+       20:   24-block  2
+branch  4 taken 20
+branch  5 taken 0
+    $$$$$:   24-block  3
+       20:   25:    }
+       20:   25-block  0
+        -:   26:
+        4:   27:	return resultado;
+        4:   28:}
+    $$$$$:   28-block  0
+        4:   28-block  1
+branch  0 taken 4
+branch  1 taken 0
+    $$$$$:   28-block  2
+        4:   28-block  3
+    $$$$$:   28-block  4
+    $$$$$:   28-block  5
+        -:   29:
+        -:   30:// Implementacion Problema 3
+function _Z23laCasaEstaQuedandoChicaNSt3__16vectorINS0_IiNS_9allocatorIiEEEENS1_IS3_EEEES5_ called 1 returned 100% blocks executed 56%
+        1:   31:vector< pair < int, float > > laCasaEstaQuedandoChica ( eph_h th, eph_i ti ) {
+        -:   32:
+        6:   33:    vector<pair<int,float>> resp = {make_pair(1,-1.0),
+        1:   34:                                        make_pair(40, -1.0),
+        1:   35:                                        make_pair(41, -1.0),
+        1:   36:                                        make_pair(42,-1.0),
+        1:   37:                                        make_pair(43,-1.0),
+        1:   38:                                        make_pair(44,-1.0)};
+        -:   39:	// TODO
+        -:   40:
+        1:   41:    int respSize = resp.size();
+        -:   42:
+        7:   43:    for(int i=0;i<respSize;i++){
+        1:   43-block  0
+        7:   43-block  1
+branch  0 taken 1
+branch  1 taken 6
+        6:   43-block  2
+        6:   44:        resp[i].second = proporcionDeCasasConHC(th,ti, resp[i].first);
+        6:   44-block  0
+branch  0 taken 6
+branch  1 taken 0
+        6:   44-block  1
+branch  2 taken 0
+branch  3 taken 6
+        6:   44-block  2
+branch  4 taken 0
+branch  5 taken 6
+    $$$$$:   44-block  3
+    $$$$$:   44-block  4
+        6:   45:    }
+        6:   45-block  0
+        -:   46:
+        1:   47:    return resp;
+        1:   48:}
+    $$$$$:   48-block  0
+    $$$$$:   48-block  1
+        1:   48-block  2
+branch  0 taken 1
+branch  1 taken 0
+    $$$$$:   48-block  3
+        1:   48-block  4
+    $$$$$:   48-block  5
+    $$$$$:   48-block  6
+        -:   49:
+        -:   50:// Implementacion Problema 4
+function _Z35creceElTeleworkingEnCiudadesGrandesNSt3__16vectorINS0_IiNS_9allocatorIiEEEENS1_IS3_EEEES5_S5_S5_ called 6 returned 100% blocks executed 42%
+        6:   51:bool creceElTeleworkingEnCiudadesGrandes ( eph_h t1h, eph_i t1i, eph_h t2h, eph_i t2i ) {
+        6:   52:    return proporcionTeleworking(t2h, t2i) > proporcionTeleworking(t1h, t1i);
+        6:   52-block  0
+branch  0 taken 6
+branch  1 taken 0
+        6:   52-block  1
+branch  2 taken 6
+branch  3 taken 0
+        6:   52-block  2
+branch  4 taken 6
+branch  5 taken 0
+        6:   52-block  3
+branch  6 taken 6
+branch  7 taken 0
+        6:   52-block  4
+branch  8 taken 0
+branch  9 taken 6
+        6:   52-block  5
+    $$$$$:   52-block  6
+    $$$$$:   52-block  7
+    $$$$$:   52-block  8
+    $$$$$:   52-block  9
+    $$$$$:   52-block 10
+    #####:   53:}
+    $$$$$:   53-block  0
+    $$$$$:   53-block  1
+    $$$$$:   53-block  2
+        -:   54:
+        -:   55:// Implementacion Problema 5
+function _Z19costoSubsidioMejoraNSt3__16vectorINS0_IiNS_9allocatorIiEEEENS1_IS3_EEEES5_i called 5 returned 100% blocks executed 60%
+        5:   56:int costoSubsidioMejora( eph_h th, eph_i ti, int monto ){
+        5:   57:    int resp = 0;
+       23:   58:    for(int i = 0; i < th.size(); i++) {
+        5:   58-block  0
+       23:   58-block  1
+branch  0 taken 18
+branch  1 taken 5
+       18:   58-block  2
+       18:   59:        hogar h = th[i];
+       31:   60:        if(tieneCasaPropia(h) && tieneCasaChica(h, ti)) {
+       18:   60-block  0
+branch  0 taken 18
+branch  1 taken 0
+       18:   60-block  1
+branch  2 taken 18
+branch  3 taken 0
+       18:   60-block  2
+branch  4 taken 13
+branch  5 taken 5
+       13:   60-block  3
+branch  6 taken 13
+branch  7 taken 0
+       13:   60-block  4
+branch  8 taken 0
+branch  9 taken 13
+       13:   60-block  5
+branch 10 taken 0
+branch 11 taken 13
+       18:   60-block  6
+branch 12 taken 5
+branch 13 taken 13
+       13:   60-block  7
+       18:   60-block  8
+branch 14 taken 5
+branch 15 taken 13
+       13:   60-block  9
+       18:   60-block 10
+branch 16 taken 8
+branch 17 taken 10
+    $$$$$:   60-block 11
+branch 18 never executed
+branch 19 never executed
+    $$$$$:   60-block 12
+    $$$$$:   60-block 13
+    $$$$$:   60-block 14
+branch 20 never executed
+branch 21 never executed
+    $$$$$:   60-block 15
+    $$$$$:   60-block 16
+    $$$$$:   60-block 17
+       10:   61:            resp += monto;
+       10:   62:        }
+       10:   62-block  0
+       18:   63:    }
+       18:   63-block  0
+    $$$$$:   63-block  1
+    $$$$$:   63-block  2
+        -:   64:
+        5:   65:    return  resp;
+        5:   65-block  0
+    #####:   66:}
+    $$$$$:   66-block  0
+    $$$$$:   66-block  1
+    $$$$$:   66-block  2
+        -:   67:
+        -:   68:// Implementacion Problema 6
+function _Z11generarJoinNSt3__16vectorINS0_IiNS_9allocatorIiEEEENS1_IS3_EEEES5_ called 4 returned 100% blocks executed 73%
+        4:   69:join_hi generarJoin( eph_h th, eph_i ti ){
+        4:   70:    join_hi resp;
+       29:   71:    for (int i= 0; i<ti.size(); i++) {
+        4:   71-block  0
+       29:   71-block  1
+branch  0 taken 4
+branch  1 taken 25
+       25:   71-block  2
+      110:   72:        for (int h =0; h<th.size(); h++) {
+       25:   72-block  0
+      110:   72-block  1
+branch  0 taken 85
+branch  1 taken 25
+       85:   72-block  2
+       85:   73:            if (ti[i][ItemInd::INDCODUSU]==th[h][ItemHogar::HOGCODUSU]) {
+       85:   73-block  0
+branch  0 taken 60
+branch  1 taken 25
+       25:   74:                resp.push_back(make_pair(th[h],ti[i]));
+       25:   74-block  0
+branch  0 taken 25
+branch  1 taken 0
+       25:   74-block  1
+branch  2 taken 0
+branch  3 taken 25
+    $$$$$:   74-block  2
+       25:   75:            }
+       25:   75-block  0
+       85:   76:        }
+       85:   76-block  0
+       25:   77:    }
+       25:   77-block  0
+        -:   78:
+        4:   79:    return  resp;
+        -:   80:
+        4:   81:}
+    $$$$$:   81-block  0
+        4:   81-block  1
+branch  0 taken 4
+branch  1 taken 0
+    $$$$$:   81-block  2
+        4:   81-block  3
+    $$$$$:   81-block  4
+    $$$$$:   81-block  5
+        -:   82:
+        -:   83:// Implementacion Problema 7
+function _Z20ordenarRegionYCODUSURNSt3__16vectorINS0_IiNS_9allocatorIiEEEENS1_IS3_EEEES6_ called 3 returned 100% blocks executed 50%
+        3:   84:void ordenarRegionYCODUSU (eph_h & th, eph_i & ti) {
+        -:   85:
+        3:   86:    ordenarTablaHogares(th);
+        3:   87:    ordenarTablaIndividuos(ti, th);
+        3:   87-block  0
+branch  0 taken 3
+branch  1 taken 0
+    $$$$$:   87-block  1
+    $$$$$:   87-block  2
+        -:   88:
+        3:   89:}
+        3:   89-block  0
+        -:   90:
+        -:   91:// Implementacion Problema 8
+function _Z16muestraHomogeneaRNSt3__16vectorINS0_IiNS_9allocatorIiEEEENS1_IS3_EEEES6_ called 2 returned 100% blocks executed 55%
+        2:   92:vector < hogar > muestraHomogenea( eph_h & th, eph_i & ti ){
+        2:   93:    hogar h = {};
+        2:   94:    vector < hogar > resp = {h};
+        2:   94-block  0
+branch  0 taken 2
+branch  1 taken 0
+        2:   94-block  1
+branch  2 taken 2
+branch  3 taken 0
+        2:   94-block  2
+        2:   94-block  3
+    $$$$$:   94-block  4
+    $$$$$:   94-block  5
+    $$$$$:   94-block  6
+    $$$$$:   94-block  7
+    $$$$$:   94-block  8
+    $$$$$:   94-block  9
+    $$$$$:   94-block 10
+    $$$$$:   94-block 11
+    $$$$$:   94-block 12
+    $$$$$:   94-block 13
+        -:   95:
+        -:   96:    // TODO
+        2:   97:    resp.clear();
+        2:   98:    vector < hogar > temp;
+        2:   99:    vector<int> hogaresAnteriores;
+        -:  100:    int diferenciaTemp;
+        -:  101:
+       23:  102:    for(int i=0;i<th.size();i++){
+        2:  102-block  0
+       23:  102-block  1
+branch  0 taken 2
+branch  1 taken 21
+       21:  102-block  2
+      242:  103:        for(int j=0;j<th.size();j++){
+       21:  103-block  0
+      242:  103-block  1
+branch  0 taken 221
+branch  1 taken 21
+      221:  103-block  2
+        -:  104:
+      221:  105:            temp.push_back(th[i]);
+      221:  105-block  0
+branch  0 taken 221
+branch  1 taken 0
+      221:  106:            hogaresAnteriores.push_back(th[i][ItemHogar::HOGCODUSU]);
+      221:  106-block  0
+branch  0 taken 221
+branch  1 taken 0
+        -:  107:
+      221:  108:            if(i !=j && diferenciaDeIngresos(ti,th[i], th[j])>0){
+      221:  108-block  0
+branch  0 taken 200
+branch  1 taken 21
+      200:  108-block  1
+branch  2 taken 200
+branch  3 taken 0
+      200:  108-block  2
+branch  4 taken 200
+branch  5 taken 0
+      200:  108-block  3
+branch  6 taken 200
+branch  7 taken 0
+      200:  108-block  4
+branch  8 taken 200
+branch  9 taken 0
+      200:  108-block  5
+      221:  108-block  6
+branch 10 taken 21
+branch 11 taken 200
+      200:  108-block  7
+      221:  108-block  8
+branch 12 taken 21
+branch 13 taken 200
+      200:  108-block  9
+      221:  108-block 10
+branch 14 taken 21
+branch 15 taken 200
+      200:  108-block 11
+      221:  108-block 12
+branch 16 taken 95
+branch 17 taken 126
+    $$$$$:  108-block 13
+branch 18 never executed
+branch 19 never executed
+    $$$$$:  108-block 14
+    $$$$$:  108-block 15
+    $$$$$:  108-block 16
+branch 20 never executed
+branch 21 never executed
+    $$$$$:  108-block 17
+    $$$$$:  108-block 18
+    $$$$$:  108-block 19
+branch 22 never executed
+branch 23 never executed
+    $$$$$:  108-block 20
+    $$$$$:  108-block 21
+        -:  109:
+       95:  110:                temp.push_back(th[j]);
+       95:  110-block  0
+branch  0 taken 95
+branch  1 taken 0
+       95:  111:                hogaresAnteriores.push_back(th[j][ItemHogar::HOGCODUSU]);
+       95:  111-block  0
+branch  0 taken 95
+branch  1 taken 0
+        -:  112:
+       95:  113:                diferenciaTemp = diferenciaDeIngresos(ti, th[i], th[j]);
+       95:  113-block  0
+branch  0 taken 95
+branch  1 taken 0
+       95:  113-block  1
+branch  2 taken 95
+branch  3 taken 0
+       95:  113-block  2
+branch  4 taken 95
+branch  5 taken 0
+       95:  113-block  3
+branch  6 taken 95
+branch  7 taken 0
+    $$$$$:  113-block  4
+    $$$$$:  113-block  5
+    $$$$$:  113-block  6
+       95:  114:                buscarSiguienteHogar(th, ti, diferenciaTemp, temp, j, hogaresAnteriores, ingresos(th[j], ti));
+       95:  114-block  0
+branch  0 taken 95
+branch  1 taken 0
+       95:  114-block  1
+branch  2 taken 95
+branch  3 taken 0
+       95:  114-block  2
+branch  4 taken 95
+branch  5 taken 0
+       95:  114-block  3
+branch  6 taken 95
+branch  7 taken 0
+       95:  114-block  4
+branch  8 taken 95
+branch  9 taken 0
+       95:  114-block  5
+branch 10 taken 95
+branch 11 taken 0
+       95:  114-block  6
+branch 12 taken 95
+branch 13 taken 0
+    $$$$$:  114-block  7
+    $$$$$:  114-block  8
+    $$$$$:  114-block  9
+    $$$$$:  114-block 10
+    $$$$$:  114-block 11
+        -:  115:
+       95:  116:                if(temp.size()>resp.size()){
+       95:  116-block  0
+branch  0 taken 91
+branch  1 taken 4
+        4:  117:                    resp.clear();
+       15:  118:                    for(int i=0;i<temp.size();i++) {
+        4:  118-block  0
+       15:  118-block  1
+branch  0 taken 11
+branch  1 taken 4
+       11:  118-block  2
+       11:  119:                        resp.push_back(temp[i]);
+       11:  119-block  0
+branch  0 taken 11
+branch  1 taken 0
+       11:  120:                    }
+       11:  120-block  0
+        4:  121:                }
+        4:  121-block  0
+        -:  122:
+       95:  123:                temp.clear();
+       95:  124:                hogaresAnteriores.clear();
+       95:  125:            }
+       95:  125-block  0
+        -:  126:
+      221:  127:            temp.clear();
+      221:  128:            hogaresAnteriores.clear();
+      221:  129:        }
+      221:  129-block  0
+        -:  130:
+       21:  131:    }
+       21:  131-block  0
+        -:  132:
+        2:  133:    return  resp;
+        2:  134:}
+    $$$$$:  134-block  0
+    $$$$$:  134-block  1
+    $$$$$:  134-block  2
+    $$$$$:  134-block  3
+    $$$$$:  134-block  4
+    $$$$$:  134-block  5
+    $$$$$:  134-block  6
+    $$$$$:  134-block  7
+    $$$$$:  134-block  8
+        2:  134-block  9
+branch  0 taken 2
+branch  1 taken 0
+    $$$$$:  134-block 10
+    $$$$$:  134-block 11
+        2:  134-block 12
+    $$$$$:  134-block 13
+    $$$$$:  134-block 14
+        -:  135:
+        -:  136:// Implementacion Problema 9
+function _Z14corregirRegionRNSt3__16vectorINS0_IiNS_9allocatorIiEEEENS1_IS3_EEEES5_ called 1 returned 100% blocks executed 100%
+        1:  137:void corregirRegion( eph_h & th, eph_i ti ) {
+        1:  138:    cambiaRegionesGBAaPampeana(th);
+        -:  139:	
+        1:  140:	return;
+        1:  140-block  0
+        -:  141:}
+        -:  142:
+        -:  143:// Implementacion Problema 11
+function _Z31histogramaDeAnillosConcentricosNSt3__16vectorINS0_IiNS_9allocatorIiEEEENS1_IS3_EEEES5_NS_4pairIiiEES3_ called 2 returned 100% blocks executed 66%
+        2:  144:vector < int > histogramaDeAnillosConcentricos( eph_h th, eph_i ti, pair < int, int > centro, vector < int > distancias ){
+        2:  145:	vector < int > resp = {};
+        -:  146:	
+        -:  147:	// TODO
+        2:  148:    int distanciasSize = distancias.size();
+        -:  149:
+        2:  150:    resp.push_back(cantHogaresEnAnillo(0,distancias[0],centro, th));
+        2:  150-block  0
+branch  0 taken 2
+branch  1 taken 0
+        2:  150-block  1
+branch  2 taken 2
+branch  3 taken 0
+        2:  150-block  2
+branch  4 taken 2
+branch  5 taken 0
+    $$$$$:  150-block  3
+        -:  151:
+        8:  152:    for(int i=0;i<distanciasSize-1;i++){  // Consultar sobre la especificacion si i=0 o i=1
+        2:  152-block  0
+        8:  152-block  1
+branch  0 taken 2
+branch  1 taken 6
+        6:  152-block  2
+        6:  153:        resp.push_back(cantHogaresEnAnillo(distancias[i],distancias[i+1],centro, th));
+        6:  153-block  0
+branch  0 taken 6
+branch  1 taken 0
+        6:  153-block  1
+branch  2 taken 6
+branch  3 taken 0
+        6:  153-block  2
+branch  4 taken 6
+branch  5 taken 0
+    $$$$$:  153-block  3
+        6:  154:    }
+        6:  154-block  0
+        -:  155:	
+        2:  156:	return resp;
+        2:  157:}
+    $$$$$:  157-block  0
+        2:  157-block  1
+branch  0 taken 2
+branch  1 taken 0
+    $$$$$:  157-block  2
+        2:  157-block  3
+    $$$$$:  157-block  4
+    $$$$$:  157-block  5
+        -:  158:
+        -:  159:// Implementacion Problema 10
+function _Z16quitarIndividuosRNSt3__16vectorINS0_IiNS_9allocatorIiEEEENS1_IS3_EEEES6_NS0_INS_4pairIiiEENS1_IS8_EEEE called 2 returned 100% blocks executed 56%
+        2:  160:pair < eph_h, eph_i > quitarIndividuos(eph_i & ti, eph_h & th, vector < pair < int, dato > >  busqueda ){
+        2:  161:    eph_h rth = {{-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1}};
+        2:  161-block  0
+branch  0 taken 2
+branch  1 taken 0
+        2:  161-block  1
+branch  2 taken 2
+branch  3 taken 0
+        2:  161-block  2
+        2:  161-block  3
+    $$$$$:  161-block  4
+    $$$$$:  161-block  5
+    $$$$$:  161-block  6
+    $$$$$:  161-block  7
+    $$$$$:  161-block  8
+    $$$$$:  161-block  9
+    $$$$$:  161-block 10
+    $$$$$:  161-block 11
+    $$$$$:  161-block 12
+    $$$$$:  161-block 13
+    $$$$$:  161-block 14
+        2:  162:    eph_i rti = {{-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1}};
+        2:  162-block  0
+branch  0 taken 2
+branch  1 taken 0
+        2:  162-block  1
+branch  2 taken 2
+branch  3 taken 0
+        2:  162-block  2
+        2:  162-block  3
+    $$$$$:  162-block  4
+    $$$$$:  162-block  5
+    $$$$$:  162-block  6
+    $$$$$:  162-block  7
+    $$$$$:  162-block  8
+    $$$$$:  162-block  9
+    $$$$$:  162-block 10
+    $$$$$:  162-block 11
+    $$$$$:  162-block 12
+    $$$$$:  162-block 13
+        2:  163:    pair < eph_h, eph_i > resp = make_pair(rth, rti);
+        2:  163-block  0
+branch  0 taken 0
+branch  1 taken 2
+       18:  164:    for (int i = 0; i < ti.size(); ++i) {
+        2:  164-block  0
+       18:  164-block  1
+branch  0 taken 16
+branch  1 taken 2
+       16:  164-block  2
+       16:  165:        individuo ind = ti[i];
+       16:  165-block  0
+branch  0 taken 16
+branch  1 taken 0
+       16:  166:        if(cumpleCondicion(busqueda, ind)) {
+       16:  166-block  0
+branch  0 taken 16
+branch  1 taken 0
+       16:  166-block  1
+branch  2 taken 16
+branch  3 taken 0
+       16:  166-block  2
+branch  4 taken 16
+branch  5 taken 0
+       16:  166-block  3
+branch  6 taken 16
+branch  7 taken 0
+    $$$$$:  166-block  4
+    $$$$$:  166-block  5
+       16:  167:            resp.second.push_back(ind);
+       16:  167-block  0
+branch  0 taken 16
+branch  1 taken 0
+       16:  168:        }
+       16:  168-block  0
+       16:  169:    }
+       16:  169-block  0
+    $$$$$:  169-block  1
+        2:  170:    vector<bool> hogarSigueTeniendoIndividuoEnEncuesta;
+       20:  171:    for (int i = 0; i < resp.second.size(); ++i) {
+        2:  171-block  0
+       20:  171-block  1
+branch  0 taken 18
+branch  1 taken 2
+       18:  171-block  2
+       18:  172:        individuo individuoAEliminar = resp.second[i];
+       18:  172-block  0
+branch  0 taken 18
+branch  1 taken 0
+       18:  173:        eph_i::iterator it = ti.begin();
+       18:  174:        bool individuoDistintoEnMismoHogar = false;
+      106:  175:        while (it != ti.end()) {
+       18:  175-block  0
+      106:  175-block  1
+branch  0 taken 18
+branch  1 taken 88
+       88:  175-block  2
+       88:  176:            individuo individuoAComparar = *it;
+       88:  176-block  0
+branch  0 taken 88
+branch  1 taken 0
+       88:  177:            if(individuoAEliminar == individuoAComparar) {
+       88:  177-block  0
+branch  0 taken 88
+branch  1 taken 0
+       88:  177-block  1
+branch  2 taken 16
+branch  3 taken 72
+       16:  178:                it = ti.erase(it);
+       16:  178-block  0
+branch  0 taken 16
+branch  1 taken 0
+       16:  179:            } else {
+       16:  179-block  0
+       72:  180:                ++it;
+       72:  181:                individuoDistintoEnMismoHogar |= individuoAComparar[ItemInd::INDCODUSU] == individuoAEliminar[ItemInd::INDCODUSU];
+       72:  181-block  0
+        -:  182:            }
+       88:  183:        }
+    $$$$$:  183-block  0
+       18:  184:        hogarSigueTeniendoIndividuoEnEncuesta.push_back(individuoDistintoEnMismoHogar);
+       18:  184-block  0
+branch  0 taken 18
+branch  1 taken 0
+       18:  185:    }
+       18:  185-block  0
+    $$$$$:  185-block  1
+       20:  186:    for(int i = 0; i < resp.second.size(); i++) {
+        2:  186-block  0
+       20:  186-block  1
+branch  0 taken 2
+branch  1 taken 18
+       18:  186-block  2
+       18:  187:        if(!hogarSigueTeniendoIndividuoEnEncuesta[i]) {
+       18:  187-block  0
+branch  0 taken 18
+branch  1 taken 0
+       18:  187-block  1
+branch  2 taken 6
+branch  3 taken 12
+        6:  188:            individuo ind = resp.second[i];
+        6:  188-block  0
+branch  0 taken 6
+branch  1 taken 0
+        6:  189:            eph_h::iterator hogarIterator = th.begin();
+       16:  190:            while(hogarIterator != th.end()) {
+        6:  190-block  0
+       16:  190-block  1
+branch  0 taken 10
+branch  1 taken 6
+       10:  190-block  2
+       10:  191:                hogar h = *hogarIterator;
+       10:  191-block  0
+branch  0 taken 10
+branch  1 taken 0
+       10:  192:                if(h[ItemHogar::HOGCODUSU] == ind[ItemInd::INDCODUSU]) {
+       10:  192-block  0
+branch  0 taken 6
+branch  1 taken 4
+        4:  193:                    resp.first.push_back(h);
+        4:  193-block  0
+branch  0 taken 4
+branch  1 taken 0
+        4:  194:                    hogarIterator = th.erase(hogarIterator);
+        4:  194-block  0
+branch  0 taken 4
+branch  1 taken 0
+        4:  195:                    --hogarIterator;
+        4:  196:                }
+        4:  196-block  0
+       10:  197:                ++hogarIterator;
+       10:  198:            }
+    $$$$$:  198-block  0
+        6:  199:        }
+        6:  199-block  0
+    $$$$$:  199-block  1
+       18:  200:    }
+       18:  200-block  0
+        -:  201:	// TODO
+        -:  202:
+        -:  203:
+        -:  204:	
+        2:  205:	return resp;
+        2:  206:}
+    $$$$$:  206-block  0
+    $$$$$:  206-block  1
+    $$$$$:  206-block  2
+    $$$$$:  206-block  3
+    $$$$$:  206-block  4
+    $$$$$:  206-block  5
+    $$$$$:  206-block  6
+        2:  206-block  7
+branch  0 taken 2
+branch  1 taken 0
+    $$$$$:  206-block  8
+    $$$$$:  206-block  9
+        2:  206-block 10
+    $$$$$:  206-block 11
+    $$$$$:  206-block 12
+    $$$$$:  206-block 13
+        -:  207:
+        -:  208:

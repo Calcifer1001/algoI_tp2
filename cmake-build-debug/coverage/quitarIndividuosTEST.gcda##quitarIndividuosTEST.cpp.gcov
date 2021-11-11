@@ -1,0 +1,832 @@
+        -:    0:Source:/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/test/quitarIndividuosTEST.cpp
+        -:    0:Graph:/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/cmake-build-debug/CMakeFiles/tpi.dir/test/quitarIndividuosTEST.gcno
+        -:    0:Data:/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/cmake-build-debug/CMakeFiles/tpi.dir/test/quitarIndividuosTEST.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "../definiciones.h"
+        -:    2:#include "../Funciones_TPI.h"
+        -:    3:#include "../ejercicios.h"
+        -:    4:#include "../auxiliares.h"
+        -:    5:#include "gtest/gtest.h"
+        -:    6:#include <iostream>
+        -:    7:#include <string>
+        -:    8:
+        -:    9:using namespace std;
+        -:   10:
+function _ZN63quitarIndividuosTEST_SacaUnIndividuoHogaresSinModificacion_Test8TestBodyEv called 1 returned 100% blocks executed 44%
+function _ZN63quitarIndividuosTEST_SacaUnIndividuoHogaresSinModificacion_TestD1Ev called 1 returned 100% blocks executed 100%
+function _ZN63quitarIndividuosTEST_SacaUnIndividuoHogaresSinModificacion_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN63quitarIndividuosTEST_SacaUnIndividuoHogaresSinModificacion_TestC1Ev called 1 returned 100% blocks executed 100%
+function _ZN63quitarIndividuosTEST_SacaUnIndividuoHogaresSinModificacion_TestC2Ev called 1 returned 100% blocks executed 100%
+function _ZN63quitarIndividuosTEST_SacaUnIndividuoHogaresSinModificacion_TestD2Ev called 1 returned 100% blocks executed 100%
+        4:   11:TEST(quitarIndividuosTEST, SacaUnIndividuoHogaresSinModificacion) {
+        1:   11-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   11-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   11-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:   11-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:   11-block  4
+branch  8 taken 1
+branch  9 taken 0
+        1:   11-block  5
+    $$$$$:   11-block  6
+    $$$$$:   11-block  7
+    $$$$$:   11-block  8
+    $$$$$:   11-block  9
+    $$$$$:   11-block 10
+    $$$$$:   11-block 11
+        1:   11-block 12
+        1:   11-block 13
+        1:   12:    eph_h th = {
+        1:   12-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   12-block  1
+        1:   12-block  2
+    $$$$$:   12-block  3
+    $$$$$:   12-block  4
+    $$$$$:   12-block  5
+    $$$$$:   12-block  6
+    $$$$$:   12-block  7
+    $$$$$:   12-block  8
+    $$$$$:   12-block  9
+    $$$$$:   12-block 10
+    $$$$$:   12-block 11
+    $$$$$:   12-block 12
+    $$$$$:   12-block 13
+        1:   13:        {22010,2020,3,319938,629513,1,41,0,1,4,3,2},
+        1:   13-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   14:        {20101,2020,3,315773,625696,1,41,0,1,2,2,2},
+        1:   14-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:   15:    };
+        -:   16:
+        1:   17:    eph_i ti = {
+        1:   17-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   17-block  1
+        1:   17-block  2
+    $$$$$:   17-block  3
+    $$$$$:   17-block  4
+    $$$$$:   17-block  5
+    $$$$$:   17-block  6
+    $$$$$:   17-block  7
+    $$$$$:   17-block  8
+    $$$$$:   17-block  9
+    $$$$$:   17-block 10
+    $$$$$:   17-block 11
+    $$$$$:   17-block 12
+        1:   18:        {22010,2020,1,0,3,1,65,1,2,15000,8}, // este se borra
+        1:   18-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   19:        {22010,2020,7,0,3,2,22,0,0,10000,10},
+        1:   19-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   20:        {22010,2020,9,0,3,1,9,0,0,0,10},
+        1:   20-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   21:        {22010,2020,10,0,3,2,9,0,0,0,10},
+        1:   21-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   22:        {22010,2020,11,0,3,2,2,0,0,0,10},
+        1:   22-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   23:        {22010,2020,12,0,3,2,17,0,0,0,10},
+        1:   23-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   24:        {20101,2020,1,0,3,2,46,1,3,3900,0},  // este no se borra, que tiene el mismo nro de componente
+        1:   24-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   25:        {20101,2020,2,0,3,1,24,0,3,6000,10},
+        1:   25-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:   26:    };
+        -:   27:
+        1:   28:    EXPECT_TRUE(esEncuestaValida(th, ti));
+        1:   28-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   28-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   28-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:   28-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:   28-block  4
+branch  8 taken 1
+branch  9 taken 0
+        1:   28-block  5
+branch 10 taken 0
+branch 11 taken 1
+        1:   28-block  6
+    $$$$$:   28-block  7
+    $$$$$:   28-block  8
+    $$$$$:   28-block  9
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   28-block 10
+branch 14 never executed
+branch 15 never executed
+    $$$$$:   28-block 11
+branch 16 never executed
+branch 17 never executed
+    $$$$$:   28-block 12
+branch 18 never executed
+branch 19 never executed
+    $$$$$:   28-block 13
+    $$$$$:   28-block 14
+    $$$$$:   28-block 15
+    $$$$$:   28-block 16
+    $$$$$:   28-block 17
+        -:   29:
+        3:   30:    vector<pair<int, dato>> busqueda = {
+        1:   30-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   30-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   30-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:   31:        {PP04G, 8},
+        1:   32:        {COMPONENTE, 1}
+        -:   33:    };
+        -:   34:
+        1:   35:    eph_h th0 = eph_h(th);
+        1:   35-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   36:    eph_i ti0 = eph_i(ti);
+        1:   36-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:   37:
+        1:   38:    pair<eph_h, eph_i> res = quitarIndividuos(ti, th, busqueda);
+        1:   38-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   38-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:   38-block  2
+        -:   39:
+        1:   40:    eph_h th_res = {{22010,2020,3,319938,629513,1,41,0,1,4,3,2}};
+        1:   40-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   40-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   40-block  2
+        1:   40-block  3
+    $$$$$:   40-block  4
+    $$$$$:   40-block  5
+    $$$$$:   40-block  6
+    $$$$$:   40-block  7
+    $$$$$:   40-block  8
+    $$$$$:   40-block  9
+    $$$$$:   40-block 10
+    $$$$$:   40-block 11
+    $$$$$:   40-block 12
+    $$$$$:   40-block 13
+        1:   41:    eph_i ti_res = {{22010,2020,1,0,3,1,65,1,2,15000,8}};
+        1:   41-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   41-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   41-block  2
+        1:   41-block  3
+    $$$$$:   41-block  4
+    $$$$$:   41-block  5
+    $$$$$:   41-block  6
+    $$$$$:   41-block  7
+    $$$$$:   41-block  8
+    $$$$$:   41-block  9
+    $$$$$:   41-block 10
+    $$$$$:   41-block 11
+    $$$$$:   41-block 12
+    $$$$$:   41-block 13
+        -:   42:    //verificacion de salida
+        1:   43:    EXPECT_EQ(th_res, res.first);
+        1:   43-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   43-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   43-block  2
+branch  4 taken 1
+branch  5 taken 0
+    $$$$$:   43-block  3
+        1:   43-block  4
+branch  6 taken 1
+branch  7 taken 0
+        1:   43-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:   43-block  6
+branch 10 taken 1
+branch 11 taken 0
+        1:   43-block  7
+branch 12 taken 1
+branch 13 taken 0
+        1:   43-block  8
+    $$$$$:   43-block  9
+    $$$$$:   43-block 10
+    $$$$$:   43-block 11
+        1:   44:    EXPECT_EQ(ti_res, res.second);
+        1:   44-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   44-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   44-block  2
+branch  4 taken 1
+branch  5 taken 0
+    $$$$$:   44-block  3
+        1:   44-block  4
+branch  6 taken 1
+branch  7 taken 0
+        1:   44-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:   44-block  6
+branch 10 taken 1
+branch 11 taken 0
+        1:   44-block  7
+branch 12 taken 1
+branch 13 taken 0
+        1:   44-block  8
+    $$$$$:   44-block  9
+    $$$$$:   44-block 10
+    $$$$$:   44-block 11
+        -:   45:
+        -:   46:    // verificacion de encuesta resultante
+        1:   47:    EXPECT_TRUE(esEncuestaValida(th,ti));
+        1:   47-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   47-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   47-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:   47-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:   47-block  4
+branch  8 taken 1
+branch  9 taken 0
+        1:   47-block  5
+branch 10 taken 1
+branch 11 taken 0
+    $$$$$:   47-block  6
+    $$$$$:   47-block  7
+    $$$$$:   47-block  8
+        1:   47-block  9
+branch 12 taken 1
+branch 13 taken 0
+        1:   47-block 10
+branch 14 taken 1
+branch 15 taken 0
+        1:   47-block 11
+branch 16 taken 1
+branch 17 taken 0
+        1:   47-block 12
+branch 18 taken 1
+branch 19 taken 0
+        1:   47-block 13
+    $$$$$:   47-block 14
+    $$$$$:   47-block 15
+    $$$$$:   47-block 16
+    $$$$$:   47-block 17
+        1:   48:    ti0.erase(ti0.begin()); // borro el primer elemento que era el que cumplia el criterio
+        1:   48-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:   49:    // ordeno para que no importe el orden
+        1:   50:    sort(th.begin(),th.end());
+        1:   50-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   51:    sort(ti.begin(),ti.end());
+        1:   51-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:   52:
+        1:   53:    sort(th0.begin(),th0.end());
+        1:   53-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   54:    sort(ti0.begin(),ti0.end());
+        1:   54-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:   55:
+        1:   56:    EXPECT_EQ(th, th0);
+        1:   56-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   56-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   56-block  2
+branch  4 taken 1
+branch  5 taken 0
+    $$$$$:   56-block  3
+        1:   56-block  4
+branch  6 taken 1
+branch  7 taken 0
+        1:   56-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:   56-block  6
+branch 10 taken 1
+branch 11 taken 0
+        1:   56-block  7
+branch 12 taken 1
+branch 13 taken 0
+        1:   56-block  8
+    $$$$$:   56-block  9
+    $$$$$:   56-block 10
+    $$$$$:   56-block 11
+        1:   57:    EXPECT_EQ(ti, ti0);
+        1:   57-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   57-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   57-block  2
+branch  4 taken 1
+branch  5 taken 0
+    $$$$$:   57-block  3
+        1:   57-block  4
+branch  6 taken 1
+branch  7 taken 0
+        1:   57-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:   57-block  6
+branch 10 taken 1
+branch 11 taken 0
+        1:   57-block  7
+branch 12 taken 0
+branch 13 taken 1
+        1:   57-block  8
+    $$$$$:   57-block  9
+    $$$$$:   57-block 10
+    $$$$$:   57-block 11
+        -:   58:
+        1:   59:}
+    $$$$$:   59-block  0
+    $$$$$:   59-block  1
+    $$$$$:   59-block  2
+    $$$$$:   59-block  3
+    $$$$$:   59-block  4
+    $$$$$:   59-block  5
+    $$$$$:   59-block  6
+    $$$$$:   59-block  7
+    $$$$$:   59-block  8
+    $$$$$:   59-block  9
+    $$$$$:   59-block 10
+    $$$$$:   59-block 11
+    $$$$$:   59-block 12
+    $$$$$:   59-block 13
+    $$$$$:   59-block 14
+    $$$$$:   59-block 15
+    $$$$$:   59-block 16
+    $$$$$:   59-block 17
+    $$$$$:   59-block 18
+    $$$$$:   59-block 19
+    $$$$$:   59-block 20
+        1:   59-block 21
+    $$$$$:   59-block 22
+    $$$$$:   59-block 23
+    $$$$$:   59-block 24
+    $$$$$:   59-block 25
+    $$$$$:   59-block 26
+    $$$$$:   59-block 27
+    $$$$$:   59-block 28
+    $$$$$:   59-block 29
+        -:   60:
+function _ZN56quitarIndividuosTEST_SacaTodosIndividuosYHogarVacio_Test8TestBodyEv called 1 returned 100% blocks executed 43%
+function _ZN56quitarIndividuosTEST_SacaTodosIndividuosYHogarVacio_TestD1Ev called 1 returned 100% blocks executed 100%
+function _ZN56quitarIndividuosTEST_SacaTodosIndividuosYHogarVacio_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN56quitarIndividuosTEST_SacaTodosIndividuosYHogarVacio_TestC1Ev called 1 returned 100% blocks executed 100%
+function _ZN56quitarIndividuosTEST_SacaTodosIndividuosYHogarVacio_TestC2Ev called 1 returned 100% blocks executed 100%
+function _ZN56quitarIndividuosTEST_SacaTodosIndividuosYHogarVacio_TestD2Ev called 1 returned 100% blocks executed 100%
+        4:   61:TEST(quitarIndividuosTEST, SacaTodosIndividuosYHogarVacio) {
+        1:   61-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   61-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   61-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:   61-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:   61-block  4
+branch  8 taken 1
+branch  9 taken 0
+        1:   61-block  5
+    $$$$$:   61-block  6
+    $$$$$:   61-block  7
+    $$$$$:   61-block  8
+    $$$$$:   61-block  9
+    $$$$$:   61-block 10
+    $$$$$:   61-block 11
+        1:   61-block 12
+        1:   61-block 13
+        1:   62:    eph_h th = {
+        1:   62-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   62-block  1
+        1:   62-block  2
+    $$$$$:   62-block  3
+    $$$$$:   62-block  4
+    $$$$$:   62-block  5
+    $$$$$:   62-block  6
+    $$$$$:   62-block  7
+    $$$$$:   62-block  8
+    $$$$$:   62-block  9
+    $$$$$:   62-block 10
+    $$$$$:   62-block 11
+    $$$$$:   62-block 12
+    $$$$$:   62-block 13
+        1:   63:        {22010,2020,3,319938,629513,1,41,0,1,4,3,2},
+        1:   63-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   64:        {20101,2020,3,315773,625696,1,41,0,1,2,2,2},
+        1:   64-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:   65:    };
+        -:   66:
+        1:   67:    eph_i ti = {
+        1:   67-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   67-block  1
+        1:   67-block  2
+    $$$$$:   67-block  3
+    $$$$$:   67-block  4
+    $$$$$:   67-block  5
+    $$$$$:   67-block  6
+    $$$$$:   67-block  7
+    $$$$$:   67-block  8
+    $$$$$:   67-block  9
+    $$$$$:   67-block 10
+    $$$$$:   67-block 11
+    $$$$$:   67-block 12
+        1:   68:        {22010,2020,1,0,3,1,65,1,2,15000,8},
+        1:   68-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   69:        {22010,2020,7,0,3,2,22,0,0,10000,10},
+        1:   69-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   70:        {22010,2020,9,0,3,1,9,0,0,0,10},
+        1:   70-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   71:        {22010,2020,10,0,3,2,9,0,0,0,10},
+        1:   71-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   72:        {22010,2020,11,0,3,2,2,0,0,0,10},
+        1:   72-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   73:        {22010,2020,12,0,3,2,17,0,0,0,10},
+        1:   73-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   74:        {20101,2020,1,0,3,2,46,1,3,3900,0},
+        1:   74-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   75:        {20101,2020,2,0,3,1,24,0,3,6000,10},
+        1:   75-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:   76:    };
+        -:   77:
+        2:   78:    vector<pair<int, dato>> busqueda = {
+        1:   78-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   78-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   79:        {INDCODUSU, 22010}
+        -:   80:    };
+        -:   81:
+        -:   82:
+        1:   83:    eph_h th_res = {
+        1:   83-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   83-block  1
+        1:   83-block  2
+    $$$$$:   83-block  3
+    $$$$$:   83-block  4
+    $$$$$:   83-block  5
+    $$$$$:   83-block  6
+    $$$$$:   83-block  7
+    $$$$$:   83-block  8
+    $$$$$:   83-block  9
+    $$$$$:   83-block 10
+    $$$$$:   83-block 11
+    $$$$$:   83-block 12
+        1:   84:            {22010,2020,3,319938,629513,1,41,0,1,4,3,2}
+        1:   84-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:   85:    };
+        -:   86:
+        1:   87:    eph_i ti_res = {
+        1:   87-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   87-block  1
+        1:   87-block  2
+    $$$$$:   87-block  3
+    $$$$$:   87-block  4
+    $$$$$:   87-block  5
+    $$$$$:   87-block  6
+    $$$$$:   87-block  7
+    $$$$$:   87-block  8
+    $$$$$:   87-block  9
+    $$$$$:   87-block 10
+    $$$$$:   87-block 11
+    $$$$$:   87-block 12
+        1:   88:        {22010,2020,1,0,3,1,65,1,2,15000,8},
+        1:   88-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   89:        {22010,2020,7,0,3,2,22,0,0,10000,10},
+        1:   89-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   90:        {22010,2020,9,0,3,1,9,0,0,0,10},
+        1:   90-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   91:        {22010,2020,10,0,3,2,9,0,0,0,10},
+        1:   91-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   92:        {22010,2020,11,0,3,2,2,0,0,0,10},
+        1:   92-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   93:        {22010,2020,12,0,3,2,17,0,0,0,10}
+        1:   93-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:   94:    };
+        -:   95:
+        1:   96:    eph_h th_out = {
+        1:   96-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   96-block  1
+        1:   96-block  2
+    $$$$$:   96-block  3
+    $$$$$:   96-block  4
+    $$$$$:   96-block  5
+    $$$$$:   96-block  6
+    $$$$$:   96-block  7
+    $$$$$:   96-block  8
+    $$$$$:   96-block  9
+    $$$$$:   96-block 10
+    $$$$$:   96-block 11
+    $$$$$:   96-block 12
+        1:   97:            {20101,2020,3,315773,625696,1,41,0,1,2,2,2}
+        1:   97-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:   98:    };
+        -:   99:
+        1:  100:    eph_i ti_out = {
+        1:  100-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  100-block  1
+        1:  100-block  2
+    $$$$$:  100-block  3
+    $$$$$:  100-block  4
+    $$$$$:  100-block  5
+    $$$$$:  100-block  6
+    $$$$$:  100-block  7
+    $$$$$:  100-block  8
+    $$$$$:  100-block  9
+    $$$$$:  100-block 10
+    $$$$$:  100-block 11
+    $$$$$:  100-block 12
+        1:  101:            {20101,2020,2,0,3,1,24,0,3,6000,10},
+        1:  101-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  102:            {20101,2020,1,0,3,2,46,1,3,3900,0},
+        1:  102-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:  103:    };
+        -:  104:
+        1:  105:    pair<eph_h, eph_i> res = quitarIndividuos(ti, th, busqueda);
+        1:  105-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  105-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:  105-block  2
+        -:  106:
+        -:  107:    // verificacion de encuesta resultante
+        1:  108:    EXPECT_TRUE(esEncuestaValida(th,ti));
+        1:  108-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  108-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  108-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  108-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  108-block  4
+branch  8 taken 1
+branch  9 taken 0
+        1:  108-block  5
+branch 10 taken 1
+branch 11 taken 0
+    $$$$$:  108-block  6
+    $$$$$:  108-block  7
+    $$$$$:  108-block  8
+        1:  108-block  9
+branch 12 taken 1
+branch 13 taken 0
+        1:  108-block 10
+branch 14 taken 1
+branch 15 taken 0
+        1:  108-block 11
+branch 16 taken 1
+branch 17 taken 0
+        1:  108-block 12
+branch 18 taken 1
+branch 19 taken 0
+        1:  108-block 13
+    $$$$$:  108-block 14
+    $$$$$:  108-block 15
+    $$$$$:  108-block 16
+    $$$$$:  108-block 17
+        -:  109:    //verificacion de salida de hogares (un solo elemento)
+        1:  110:    EXPECT_EQ(th_res, res.first);
+        1:  110-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  110-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  110-block  2
+branch  4 taken 1
+branch  5 taken 0
+    $$$$$:  110-block  3
+        1:  110-block  4
+branch  6 taken 1
+branch  7 taken 0
+        1:  110-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:  110-block  6
+branch 10 taken 1
+branch 11 taken 0
+        1:  110-block  7
+branch 12 taken 1
+branch 13 taken 0
+        1:  110-block  8
+    $$$$$:  110-block  9
+    $$$$$:  110-block 10
+    $$$$$:  110-block 11
+        1:  111:    EXPECT_EQ(th_out, th);
+        1:  111-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  111-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  111-block  2
+branch  4 taken 1
+branch  5 taken 0
+    $$$$$:  111-block  3
+        1:  111-block  4
+branch  6 taken 1
+branch  7 taken 0
+        1:  111-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:  111-block  6
+branch 10 taken 1
+branch 11 taken 0
+        1:  111-block  7
+branch 12 taken 1
+branch 13 taken 0
+        1:  111-block  8
+    $$$$$:  111-block  9
+    $$$$$:  111-block 10
+    $$$$$:  111-block 11
+        -:  112:
+        -:  113:    // verificacion de salida de individuos (varios elementos)
+        -:  114:    // ordeno para que no importe el orden
+        1:  115:    sort(ti_out.begin(),ti_out.end());
+        1:  115-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:  116:
+        1:  117:    EXPECT_EQ(ti, ti_out);
+        1:  117-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  117-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  117-block  2
+branch  4 taken 1
+branch  5 taken 0
+    $$$$$:  117-block  3
+        1:  117-block  4
+branch  6 taken 1
+branch  7 taken 0
+        1:  117-block  5
+branch  8 taken 1
+branch  9 taken 0
+        1:  117-block  6
+branch 10 taken 1
+branch 11 taken 0
+        1:  117-block  7
+branch 12 taken 0
+branch 13 taken 1
+        1:  117-block  8
+    $$$$$:  117-block  9
+    $$$$$:  117-block 10
+    $$$$$:  117-block 11
+        1:  118:}
+    $$$$$:  118-block  0
+    $$$$$:  118-block  1
+    $$$$$:  118-block  2
+    $$$$$:  118-block  3
+    $$$$$:  118-block  4
+    $$$$$:  118-block  5
+    $$$$$:  118-block  6
+    $$$$$:  118-block  7
+    $$$$$:  118-block  8
+    $$$$$:  118-block  9
+    $$$$$:  118-block 10
+    $$$$$:  118-block 11
+    $$$$$:  118-block 12
+        1:  118-block 13
+    $$$$$:  118-block 14
+    $$$$$:  118-block 15
+    $$$$$:  118-block 16
+    $$$$$:  118-block 17
+    $$$$$:  118-block 18
+    $$$$$:  118-block 19
+    $$$$$:  118-block 20
+    $$$$$:  118-block 21

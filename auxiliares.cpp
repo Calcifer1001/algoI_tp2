@@ -211,56 +211,10 @@ bool esValida(eph_h th, eph_i ti) {
         return false;
 }
 
-
-// Auxiliares Generales martin
-
+// Auxiliares ejercicio 2
 bool esCasa(hogar h){
     return h[ItemHogar::IV1]==1;
 }
-
-
-
-bool hogarEnTabla(hogar h, eph_h th){
-    bool res = false;
-    int thSize = th.size();
-
-    for(int i=0;i<thSize;i++){
-        if(th[i]==h){
-            res = true;
-        }
-    }
-
-    return res;
-}
-
-
-int cantidadDeHabitantes(hogar h, eph_i ti){
-    int res = 0;
-    int tiSize = ti.size();
-
-    for(int i=0;i<tiSize;i++){
-        if(esSuHogar(h, ti[i])){
-            res++;
-        }
-    }
-
-    return res;
-}
-
-int ingresos(hogar h, eph_i ti){
-    int res = 0;
-    int tiSize = ti.size();
-
-    for(int i=0;i<tiSize;i++){
-        if(ti[i][ItemInd::INDCODUSU]==h[ItemHogar::HOGCODUSU] && ti[i][ItemInd::p47T]>-1){
-            res += ti[i][ItemInd::p47T];
-        }
-    }
-
-    return res;
-}
-
-// Auxiliares ejercicio 2
 
 int cantHogaresConNHabitaciones(eph_h th, int region, int habitaciones){
     int res=0;
@@ -289,6 +243,18 @@ int maximaCantidadDeHabitacionesEnRegion(eph_h th, int region){
 }
 
 // Auxiliares del ejercicio 3
+int cantidadDeHabitantes(hogar h, eph_i ti){
+    int res = 0;
+    int tiSize = ti.size();
+
+    for(int i=0;i<tiSize;i++){
+        if(esSuHogar(h, ti[i])){
+            res++;
+        }
+    }
+
+    return res;
+}
 
 bool esHogarValido(hogar h, int region){
     return (esCasa(h) && h[ItemHogar::REGION]==region && h[ItemHogar::MAS_500]==0);
@@ -396,6 +362,18 @@ void ordenarTablaIndividuos(eph_i &ti, eph_h th) {
 }
 
 //Auxiliares del ejercicio 8
+int ingresos(hogar h, eph_i ti){
+    int res = 0;
+    int tiSize = ti.size();
+
+    for(int i=0;i<tiSize;i++){
+        if(ti[i][ItemInd::INDCODUSU]==h[ItemHogar::HOGCODUSU] && ti[i][ItemInd::p47T]>-1){
+            res += ti[i][ItemInd::p47T];
+        }
+    }
+
+    return res;
+}
 
 bool estaContenido(int actual, vector<int> anteriores){
     bool res=false;
@@ -413,16 +391,20 @@ int diferenciaDeIngresos(eph_i ti, hogar hog1, hogar hog2){
     return ingresos(hog2,ti)-ingresos(hog1,ti);
 }
 
-void buscarSiguienteHogar(eph_h th, eph_i ti, int dif, vector<hogar>& temp, int nEsimoHogar, vector<int> hogaresAnteriores, int maximoActual){
+void buscarSiguienteHogar(eph_h th, eph_i ti, int dif, vector<hogar>& temp, int hogarAnterior, vector<int> hogaresAnteriores, int maximoActual){
     for(int k=0;k<th.size();k++){
-        if(nEsimoHogar != k && diferenciaDeIngresos(ti, th[nEsimoHogar], th[k])>0 && diferenciaDeIngresos(ti, th[nEsimoHogar], th[k]) == dif && !estaContenido(th[k][ItemHogar::HOGCODUSU], hogaresAnteriores) && ingresos(th[k], ti)>maximoActual){
-            temp.push_back(th[k]);
-            hogaresAnteriores.push_back(th[k][ItemHogar::HOGCODUSU]);
-            maximoActual = ingresos(th[k], ti);
-            buscarSiguienteHogar(th, ti, dif, temp, k, hogaresAnteriores, maximoActual);
+        if(hogarAnterior != k && diferenciaDeIngresos(ti, th[hogarAnterior], th[k]) == dif &&
+           !estaContenido(th[k][ItemHogar::HOGCODUSU], hogaresAnteriores) &&
+           ingresos(th[k], ti)>maximoActual){
+
+                temp.push_back(th[k]);
+                hogaresAnteriores.push_back(th[k][ItemHogar::HOGCODUSU]);
+                maximoActual = ingresos(th[k], ti);
+                buscarSiguienteHogar(th, ti, dif, temp, k, hogaresAnteriores, maximoActual);
         }
     }
 }
+
 // Auxiliares del ejercicio 4
 bool esCasaODepartamento(hogar h) {
     return h[ItemHogar::IV1] == 1 || h[ItemHogar::IV1] == 2;
@@ -536,7 +518,6 @@ bool cumpleCondicion(vector < pair < int, dato >> busqueda, individuo ind) {
     return true;
 }
 // Auxiliares del ejercicio 11
-
 float distanciaEuclidiana(pair < int, int > centro, int latitud, int longitud){
     float res = sqrt(pow(centro.first-latitud, 2) + pow(centro.second-longitud, 2));
     return res;
@@ -552,7 +533,7 @@ bool hogarEnAnillo(int distDesde, int distHasta, pair < int, int > centro, hogar
     return res;
 }
 
-int cantHogaresEnAnillo(int distDesde, int distHasta, pair < int, int > centro, eph_h th){ // consultar por la especificacion si entra el eph como parametro
+int cantHogaresEnAnillo(int distDesde, int distHasta, pair < int, int > centro, eph_h th){
     int thSize = th.size();
     int res = 0;
 
