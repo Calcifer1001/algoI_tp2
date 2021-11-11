@@ -9,11 +9,11 @@ void ordenarTablaIndividuos(eph_i &ti, eph_h th);
 float proporcionTeleworking(eph_h th, eph_i ti);
 
 // Ejercicio 2
-int maximaCantidadDeHabitacionesEnRegion(eph_h th, int region);
-int cantHogaresConNHabitaciones(eph_h th, int region, int habitaciones);
+int maximaCantidadDeHabitacionesEnRegion(eph_h th, dato region);
+int cantHogaresConNHabitaciones(eph_h th, dato region, dato habitaciones);
 
 // Ejercicio 3
-float proporcionDeCasasConHC(eph_h th, eph_i ti, int region);
+float proporcionDeCasasConHC(eph_h th, eph_i ti, dato region);
 
 // Ejercicio 5
 bool tieneCasaPropia(hogar h);

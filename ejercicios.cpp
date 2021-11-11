@@ -14,7 +14,7 @@ bool esEncuestaValida ( eph_h th, eph_i ti ) {
 }
 
 // Implementacion Problema 2
-vector < int > histHabitacional ( eph_h th, eph_i ti, int region ) {
+vector < int > histHabitacional ( eph_h th, eph_i ti, dato region ) {
 	vector < int > resultado = {-1, -1, -1, -1, -1, -1};
 	
 	// TODO
@@ -38,9 +38,8 @@ vector< pair < int, float > > laCasaEstaQuedandoChica ( eph_h th, eph_i ti ) {
                                         make_pair(44,-1.0)};
 	// TODO
 
-    int respSize = resp.size();
 
-    for(int i=0;i<respSize;i++){
+    for(int i=0;i<CANTIDAD_DE_REGIONES;i++){
         resp[i].second = proporcionDeCasasConHC(th,ti, resp[i].first);
     }
 
@@ -100,7 +99,7 @@ vector < hogar > muestraHomogenea( eph_h & th, eph_i & ti ){
 
     for(int i=0;i<th.size();i++){
         for(int j=0;j<th.size();j++){
-            
+
             if(i !=j && diferenciaDeIngresos(ti,th[i], th[j])>0){
 
                 temp.push_back(th[i]);

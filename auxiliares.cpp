@@ -213,10 +213,10 @@ bool esValida(eph_h th, eph_i ti) {
 
 // Auxiliares ejercicio 2
 bool esCasa(hogar h){
-    return h[ItemHogar::IV1]==1;
+    return h[ItemHogar::IV1]==CASA;
 }
 
-int cantHogaresConNHabitaciones(eph_h th, int region, int habitaciones){
+int cantHogaresConNHabitaciones(eph_h th, dato region, dato habitaciones){
     int res=0;
     int thSize=th.size();
 
@@ -229,7 +229,7 @@ int cantHogaresConNHabitaciones(eph_h th, int region, int habitaciones){
     return res;
 }
 
-int maximaCantidadDeHabitacionesEnRegion(eph_h th, int region){
+int maximaCantidadDeHabitacionesEnRegion(eph_h th, dato region){
     int thSize=th.size();
     int res=0;
 
@@ -256,7 +256,7 @@ int cantidadDeHabitantes(hogar h, eph_i ti){
     return res;
 }
 
-bool esHogarValido(hogar h, int region){
+bool esHogarValido(hogar h, dato region){
     return (esCasa(h) && h[ItemHogar::REGION]==region && h[ItemHogar::MAS_500]==0);
 }
 
@@ -264,7 +264,7 @@ bool hogarConHacinamientoCritico(hogar h, eph_i ti){
     return (cantidadDeHabitantes(h, ti)>3*h[ItemHogar::II2]);
 }
 
-int cantHogaresValidos(eph_h th, int region){
+int cantHogaresValidos(eph_h th, dato region){
     int thSize=th.size();
     int res = 0;
 
@@ -276,7 +276,7 @@ int cantHogaresValidos(eph_h th, int region){
     return res;
 }
 
-int cantHogaresValidosConHC(eph_h th, eph_i ti, int region){
+int cantHogaresValidosConHC(eph_h th, eph_i ti, dato region){
     int thSize=th.size();
     int res = 0;
 
@@ -288,7 +288,7 @@ int cantHogaresValidosConHC(eph_h th, eph_i ti, int region){
     return res;
 }
 
-float proporcionDeCasasConHC(eph_h th, eph_i ti, int region){
+float proporcionDeCasasConHC(eph_h th, eph_i ti, dato region){
     float res = 0;
 
     if(cantHogaresValidos(th, region)>0){
@@ -444,7 +444,7 @@ bool individuoEnHogarValido(individuo i, eph_h th) {
 }
 
 bool trabaja(individuo i) {
-    return i[ItemInd::ESTADO] == 1;
+    return i[ItemInd::ESTADO] == OCUPADO;
 }
 
 bool esDeCiudadGrande(individuo i, eph_h th) {
