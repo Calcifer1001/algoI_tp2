@@ -100,10 +100,10 @@ vector < hogar > muestraHomogenea( eph_h & th, eph_i & ti ){
 
     for(int i=0;i<th.size();i++){
         for(int j=0;j<th.size();j++){
-            temp.push_back(th[i]);
-
+            
             if(i !=j && diferenciaDeIngresos(ti,th[i], th[j])>0){
 
+                temp.push_back(th[i]);
                 temp.push_back(th[j]);
                 diferenciaTemp = diferenciaDeIngresos(ti, th[i], th[j]);
                 buscarSiguientesHogares(th, ti, diferenciaTemp, temp, j, ingresos(th[j], ti));
