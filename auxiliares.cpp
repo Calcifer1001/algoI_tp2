@@ -33,14 +33,6 @@ bool esMatriz( vector<vector<dato>> m) {
     return true;
 }
 
-bool individuoEnTabla (individuo ind, eph_i ti) {
-    for (int i = 0; i < ti.size(); i++) {
-        if (ti[i] == ind)
-            return true;
-    }
-    return false;
-}
-
 bool cantidadCorrectaDeColumnasI( eph_i ti) {
     for (int i = 0; i<ti.size(); i++) {
         if (ti[i].size() != 11)
