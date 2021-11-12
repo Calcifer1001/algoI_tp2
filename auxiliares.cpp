@@ -21,7 +21,7 @@ bool esDeCiudadGrande(individuo vector1, eph_h vector2);
 bool suHogarEsCasaODepartamento(individuo vector1, eph_h vector2);
 
 bool vacia (vector<vector<dato>> s) {
-return s.size()==0;
+    return s.size()==0;
 }
 
 bool esMatriz( vector<vector<dato>> m) {
@@ -33,7 +33,7 @@ bool esMatriz( vector<vector<dato>> m) {
     return true;
 }
 
-bool cantidadCorrectaDeColumnasI( eph_i ti) {
+bool  cantidadCorrectaDeColumnasI( eph_i ti) {
     for (int i = 0; i<ti.size(); i++) {
         if (ti[i].size() != 11)
             return false;
