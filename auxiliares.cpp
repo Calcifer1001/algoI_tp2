@@ -149,13 +149,10 @@ bool cantidadValidaDormitorios (eph_h th) {
 }
 
 bool individuoValido (individuo i) {
-    if (i[ItemInd::INDCODUSU]>0 && i[ItemInd::COMPONENTE]>0 && i[ItemInd::INDTRIMESTRE]>0 && i[ItemInd::INDTRIMESTRE]<=4 && i[ItemInd::CH4]>0 &&
-        i[ItemInd::CH4]<=4 &&i[ItemInd::CH6]>=0 && i[ItemInd::CH6]>=0 && (i[ItemInd::NIVEL_ED]==0 || i[ItemInd::NIVEL_ED]==1) &&
-        i[ItemInd::ESTADO]>=-1 && i[ItemInd::ESTADO]<=1 && i[ItemInd::CAT_OCUP]>=0 && i[ItemInd::CAT_OCUP]<=4 && (i[ItemInd::p47T]>=0 || i[ItemInd::p47T]==-1)
-        && i[ItemInd::PP04G]>=0 && i[ItemInd::PP04G]<=10 )
-        return true;
-    else
-        return false;
+    return (i[ItemInd::INDCODUSU]>0 && i[ItemInd::COMPONENTE]>0 && i[ItemInd::INDTRIMESTRE]>0 && i[ItemInd::INDTRIMESTRE]<=4 && i[ItemInd::CH4]>0 &&
+            i[ItemInd::CH4]<=4 &&i[ItemInd::CH6]>=0 && i[ItemInd::CH6]>=0 && (i[ItemInd::NIVEL_ED]==0 || i[ItemInd::NIVEL_ED]==1) &&
+            i[ItemInd::ESTADO]>=-1 && i[ItemInd::ESTADO]<=1 && i[ItemInd::CAT_OCUP]>=0 && i[ItemInd::CAT_OCUP]<=4 && (i[ItemInd::p47T]>=0 || i[ItemInd::p47T]==-1)
+            && i[ItemInd::PP04G]>=0 && i[ItemInd::PP04G]<=10 );
 }
 
 bool valoresEnRangoI(eph_i ti) {
@@ -171,12 +168,9 @@ bool valorRegionValido(int r) {
 }
 
 bool hogarValido(hogar h) {
-    if (h[ItemHogar::HOGCODUSU]>0 && h[ItemHogar::HOGTRIMESTRE]>0 && h[ItemHogar::HOGTRIMESTRE]<=4 && h[ItemHogar::II7]>0 && h[ItemHogar::II7]<=3 &&
-        valorRegionValido(h[ItemHogar::REGION]) && (h[ItemHogar::MAS_500]==0 || h[ItemHogar::MAS_500]==1) && h[ItemHogar::IV1]>0 && h[ItemHogar::IV1]<=5 &&
-        h[ItemHogar::IV2]>0 && h[ItemHogar::II2]>=1 && (h[ItemHogar::II3]==1 || h[ItemHogar::II3]==2))
-        return true;
-    else
-        return false;
+    return (h[ItemHogar::HOGCODUSU]>0 && h[ItemHogar::HOGTRIMESTRE]>0 && h[ItemHogar::HOGTRIMESTRE]<=4 && h[ItemHogar::II7]>0 && h[ItemHogar::II7]<=3 &&
+            valorRegionValido(h[ItemHogar::REGION]) && (h[ItemHogar::MAS_500]==0 || h[ItemHogar::MAS_500]==1) && h[ItemHogar::IV1]>0 && h[ItemHogar::IV1]<=5 &&
+            h[ItemHogar::IV2]>0 && h[ItemHogar::II2]>=1 && (h[ItemHogar::II3]==1 || h[ItemHogar::II3]==2));
 }
 
 bool valoresEnRangoH (eph_h th) {
@@ -188,13 +182,10 @@ bool valoresEnRangoH (eph_h th) {
 }
 
 bool esValida(eph_h th, eph_i ti) {
-    if (!vacia(ti) && !vacia(th) && esMatriz(ti) && esMatriz(th) && cantidadCorrectaDeColumnasI(ti) &&
-        cantidadCorrectaDeColumnasH(th) && !hayIndividuosSinHogares(ti, th) && !hayHogaresSinIndividuos(ti, th) &&
-        !hayRepetidosI(ti) && !hayRepetidosH(th) && mismoAnioYTrimestre(ti, th) && menosDe21MiembrosPorHogar(th, ti) &&
-        cantidadValidaDormitorios(th) && valoresEnRangoI(ti) && valoresEnRangoH(th))
-        return true;
-    else
-        return false;
+    return (!vacia(ti) && !vacia(th) && esMatriz(ti) && esMatriz(th) && cantidadCorrectaDeColumnasI(ti) &&
+            cantidadCorrectaDeColumnasH(th) && !hayIndividuosSinHogares(ti, th) && !hayHogaresSinIndividuos(ti, th) &&
+            !hayRepetidosI(ti) && !hayRepetidosH(th) && mismoAnioYTrimestre(ti, th) && menosDe21MiembrosPorHogar(th, ti) &&
+            cantidadValidaDormitorios(th) && valoresEnRangoI(ti) && valoresEnRangoH(th));
 }
 
 // Auxiliares ejercicio 2
