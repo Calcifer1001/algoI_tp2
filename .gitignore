@@ -3,3 +3,6 @@ cmake-build-debug/
 tpi
 tpi.exe
 tpi 2
+
+tmp/
+template-alumnos_correccion_2021_11_09/
