@@ -149,8 +149,8 @@ bool cantidadValidaDormitorios (eph_h th) {
 }
 
 bool individuoValido (individuo i) {
-    return (i[ItemInd::INDCODUSU]>0 && i[ItemInd::COMPONENTE]>0 && i[ItemInd::INDTRIMESTRE]>0 && i[ItemInd::INDTRIMESTRE]<=4 && i[ItemInd::CH4]>0 &&
-            i[ItemInd::CH4]<=4 &&i[ItemInd::CH6]>=0 && i[ItemInd::CH6]>=0 && (i[ItemInd::NIVEL_ED]==0 || i[ItemInd::NIVEL_ED]==1) &&
+    return (i[ItemInd::INDCODUSU]>0 && i[ItemInd::COMPONENTE]>0 && i[ItemInd::INDTRIMESTRE]>0 && i[ItemInd::INDTRIMESTRE]<=4 && (i[ItemInd::CH4]==1 ||
+            i[ItemInd::CH4]== 2) &&i[ItemInd::CH6]>=0 && (i[ItemInd::NIVEL_ED]==0 || i[ItemInd::NIVEL_ED]==1) &&
             i[ItemInd::ESTADO]>=-1 && i[ItemInd::ESTADO]<=1 && i[ItemInd::CAT_OCUP]>=0 && i[ItemInd::CAT_OCUP]<=4 && (i[ItemInd::p47T]>=0 || i[ItemInd::p47T]==-1)
             && i[ItemInd::PP04G]>=0 && i[ItemInd::PP04G]<=10 );
 }
