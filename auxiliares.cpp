@@ -292,7 +292,7 @@ float proporcionDeCasasConHC(eph_h th, eph_i ti, dato region){
     float res = 0;
 
     if(cantHogaresValidos(th, region)>0){
-        res=cantHogaresValidosConHC(th, ti, region)/ cantHogaresValidos(th, region);
+        res = (float)cantHogaresValidosConHC(th, ti, region)/ (float)cantHogaresValidos(th, region); // correccion para la reentrega
     }
 
     return res;

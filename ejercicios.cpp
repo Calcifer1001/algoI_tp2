@@ -118,6 +118,11 @@ vector < hogar > muestraHomogenea( eph_h & th, eph_i & ti ){
             temp.clear();
         }
     }
+
+    if (resp.size()<3){ //Correccion para la reentrega
+        resp.clear();
+    }
+
     return  resp;
 }
 
