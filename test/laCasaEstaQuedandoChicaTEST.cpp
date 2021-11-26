@@ -171,7 +171,7 @@ TEST (laCasaEstaQuedandoChica, promediosNoEnteros) {
 
     vector<pair<int,float>> esperado = {make_pair(1,0.0),
                                         make_pair(40, 0.0),
-                                        make_pair(41, (1/2)),
+                                        make_pair(41, ((float)1/(float)2)),
                                         make_pair(42,1.0),
                                         make_pair(43,0.0),
                                         make_pair(44,0.0)};
