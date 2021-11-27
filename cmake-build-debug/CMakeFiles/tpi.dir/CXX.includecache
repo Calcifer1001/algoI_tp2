@@ -294,6 +294,10 @@ fstream
 definiciones.h
 /Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/definiciones.h
 
+/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/auxiliares.h
+definiciones.h
+/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/definiciones.h
+
 /Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/definiciones.h
 iostream
 -
@@ -314,19 +318,19 @@ tuple
 definiciones.h
 /Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/definiciones.h
 
-/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/test/laCasaEstaQuedandoChicaTEST.cpp
+/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/test/muestraHomogeneaTEST.cpp
 ../definiciones.h
 /Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/definiciones.h
 ../Funciones_TPI.h
 /Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/Funciones_TPI.h
 ../ejercicios.h
 /Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/ejercicios.h
+../auxiliares.h
+/Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/auxiliares.h
 gtest/gtest.h
 /Users/martinacuna/Documents/Facultad/Algoritmos/TPI/algoI_tp2/test/gtest/gtest.h
 iostream
 -
 string
--
-math.h
 -
 
